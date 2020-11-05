@@ -30,6 +30,8 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
+	//Test comment for GitHub purposes
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
