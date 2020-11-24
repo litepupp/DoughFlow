@@ -5,16 +5,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <PasswordField layoutX="317.0" layoutY="304.0" promptText="Enter Password" />
-            <TextField layoutX="317.0" layoutY="253.0" promptText="Enter Username" />
+            <PasswordField fx:id="PasswordField" layoutX="317.0" layoutY="304.0" promptText="Enter Password" />
+            <TextField fx:id="UsernameField" layoutX="317.0" layoutY="253.0" promptText="Enter Username" />
             <Button layoutX="288.0" layoutY="373.0" mnemonicParsing="false" text="Login" />
             <Button layoutX="451.0" layoutY="374.0" mnemonicParsing="false" text="Register" />
-            <Label layoutX="294.0" layoutY="413.0" prefHeight="62.0" prefWidth="226.0" />
+            <Label fx:id="personnelScene" layoutX="294.0" layoutY="413.0" prefHeight="62.0" prefWidth="226.0" />
          </children>
       </AnchorPane>
    </center>
