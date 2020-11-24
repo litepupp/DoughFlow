@@ -37,7 +37,7 @@ public class LoginController {
 	
 	public void initializeLogins() {
 		currentLogin = new Login();
-		
+		currentLogin.loadLogins("data/logins.csv");
 	}
 	
 	public void LoginPress(ActionEvent event) throws IOException {

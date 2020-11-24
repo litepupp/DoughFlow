@@ -21,7 +21,7 @@ public class Login {
 		}
 	}
 	
-	public boolean ifUserExists(String name, User temp) {
+	private boolean ifUserExists(String name, User temp) {
 		for (String i : this.logins.keySet()) {
 			  if (i.equals(name)) {
 				  return true;
@@ -30,11 +30,11 @@ public class Login {
 		return false;
 	}
 	
-	public void loadLogins() {
+	public void loadLogins(String path) {
 		
 	}
 	
-	public void writeNewUser() {
+	private void writeNewUser(String path) {
 		
 	}
 	
