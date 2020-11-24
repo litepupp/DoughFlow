@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -15,24 +16,18 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("DoughFlow v1.0");
 		
-		showMainView();
-	}
-
-	private void showMainView() throws IOException{
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("controller/MainView.fxml"));
-		mainLayout = loader.load();
-		Scene scene = new Scene(mainLayout);
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("DoughFlow");
+		
+		Parent root = FXMLLoader.load(getClass().getResource("controller/LoginView.fxml"));
+		Scene scene = new Scene(root);
+		
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 
-	//Test comment for GitHub purposes
-	//Secondary comment for testing
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
