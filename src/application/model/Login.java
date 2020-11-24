@@ -16,7 +16,7 @@ public class Login {
 	public boolean registerUser(String name, String username, String password) {
 		User temp = new User(name, username, password);
 		
-		if (ifAlreadyExists(name, temp) == false) {
+		if (ifAlreadyExists(username, temp) == false) {
 			System.out.println(name + " does not exist");
 			this.logins.put(name, temp);
 			return true;
@@ -26,12 +26,9 @@ public class Login {
 		}
 	}
 	
-	public boolean ifAlreadyExists(String name, User temp) {
+	public boolean ifAlreadyExists(String username, User temp) {
 		for (String i : this.logins.keySet()) {
-			System.out.println(i + " compared to " + name);
-			  if (i.equals(name)) {
-				  System.out.println(i + " equals " + name);
-				  System.out.println("Returning true (User already Exists)");
+			  if (i.equals(username)) {
 				  return true;
 			  }
 		}

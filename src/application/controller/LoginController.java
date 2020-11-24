@@ -63,11 +63,11 @@ public class LoginController {
 		}
 		
 		if (currentLogin.registerUser(name, username, password) == true) {
-			ErrorLabel.setText("User \"" + name + "/" + username + "\" registered!");
+			ErrorLabel.setText("User [" + name + "/" + username + "] registered!");
 			currentLogin.printAllUsers();
 		}
 		else {
-			ErrorLabel.setText("Error: User \"" + name + "/" + username + "\" already exists");
+			ErrorLabel.setText("Error: User [" + name + "/" + username + "] already exists");
 		}
 		
 	}
