@@ -25,7 +25,7 @@ public class LoginController {
 	@FXML
 	private Label ErrorLabel;
 	@FXML
-	private PasswordField NameField;
+	private TextField NameField;
 	@FXML
 	private PasswordField PasswordField;
 	@FXML
