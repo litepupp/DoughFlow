@@ -45,7 +45,6 @@ public class Login {
 		User temp = new User(name, username, password);
 		
 		if (ifAlreadyExists(username, temp) == false) {
-			System.out.println(name + " does not exist");
 			this.logins.put(name, temp);
 			return true;
 		}
