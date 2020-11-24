@@ -26,6 +26,8 @@ public class LoginController {
 	private TextField UsernameField;
 	@FXML
 	private Button LoginButton;
+	@FXML
+	private Button RegisterButton;
 	
 	public void LoginPress(ActionEvent event) throws IOException {
 		
