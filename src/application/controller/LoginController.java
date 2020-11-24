@@ -19,6 +19,7 @@ import application.model.*;
 public class LoginController {
 	
 	Login currentLogin;
+	boolean alreadyLoad;
 	
 	@FXML
 	private Scene loginScene;
@@ -56,7 +57,10 @@ public class LoginController {
 		String username = UsernameField.getText();
 		String password = PasswordField.getText();
 			
-		initializeLogins();
+		if (alreadyLoad == false) {
+			initializeLogins();
+			this.alreadyLoad = true;
+		}
 		
 		if (currentLogin.registerUser(name, username, password) == true) {
 			ErrorLabel.setText("User \"" + name + "/" + username + "\" registered!");
