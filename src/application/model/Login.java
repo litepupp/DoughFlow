@@ -9,6 +9,10 @@ public class Login {
 	
 	public HashMap<String, User> logins;
 	
+	public void loadLogins(String path) {
+		
+	}
+	
 	public boolean registerUser(String name, String username, String password) {
 		User temp = new User(name, username, password);
 		
@@ -28,10 +32,6 @@ public class Login {
 			  }
 		}
 		return false;
-	}
-	
-	public void loadLogins(String path) {
-		
 	}
 	
 	private void writeNewUser(String path) {
