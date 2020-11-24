@@ -27,13 +27,27 @@ public class LoginController {
 	@FXML
 	private Button LoginButton;
 	
-public void handle(ActionEvent event) throws IOException {
+	public void LoginPress(ActionEvent event) throws IOException {
 		
 		String username = UsernameField.getText();
 		String password = PasswordField.getText();
 		
 		System.out.println(username);
 		System.out.println(password);
+		
+		ErrorLabel.setText(username + " " + password);
+		
+	}
+	
+	public void RegisterPress(ActionEvent event) throws IOException {
+		
+		String username = UsernameField.getText();
+		String password = PasswordField.getText();
+		
+		System.out.println(username);
+		System.out.println(password);
+		
+		ErrorLabel.setText(username + " " + password);
 		
 	}
 
