@@ -14,13 +14,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import application.model.*;
 
 public class LoginController {
+	
+	Login currentLogin;
 	
 	@FXML
 	private Scene loginScene;
 	@FXML
 	private Label ErrorLabel;
+	@FXML
+	private PasswordField NameField;
 	@FXML
 	private PasswordField PasswordField;
 	@FXML
@@ -30,30 +35,39 @@ public class LoginController {
 	@FXML
 	private Button RegisterButton;
 	
+	public void initializeLogins() {
+		currentLogin = new Login();
+		
+	}
+	
 	public void LoginPress(ActionEvent event) throws IOException {
 		
 		String username = UsernameField.getText();
 		String password = PasswordField.getText();
 		
-		System.out.println(username);
-		System.out.println(password);
 		
-		ErrorLabel.setText("error");
+		ErrorLabel.setText("Error not really");
 		
 	}
 	
 	public void RegisterPress(ActionEvent event) throws IOException {
 		
+		String name = NameField.getText();
 		String username = UsernameField.getText();
 		String password = PasswordField.getText();
+			
+		initializeLogins();
 		
-		System.out.println(username);
-		System.out.println(password);
-		
-		ErrorLabel.setText("Error");
+		if (currentLogin.registerUser(name, username, password) == true) {
+			ErrorLabel.setText("User \"" + name + "/" + username + "\" registered!");
+			currentLogin.printAllUsers();
+		}
+		else {
+			ErrorLabel.setText("Error: User \"" + name + "/" + username + "\" already exists");
+		}
 		
 	}
-
+	
 	/*
 	public void setPersonnelScene(Scene scene) {
 		personnelScene = scene;
