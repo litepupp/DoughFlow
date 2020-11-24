@@ -37,7 +37,7 @@ public class LoginController {
 		System.out.println(username);
 		System.out.println(password);
 		
-		ErrorLabel.setText(username + " " + password);
+		ErrorLabel.setText("error");
 		
 	}
 	
@@ -49,7 +49,7 @@ public class LoginController {
 		System.out.println(username);
 		System.out.println(password);
 		
-		ErrorLabel.setText(username + " " + password);
+		ErrorLabel.setText("Error");
 		
 	}
 
