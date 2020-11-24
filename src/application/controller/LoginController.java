@@ -16,6 +16,7 @@ import java.io.IOException;
 
 
 public class LoginController {
+	
 	@FXML
 	private Scene loginScene;
 	@FXML

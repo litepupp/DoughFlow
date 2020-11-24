@@ -13,7 +13,7 @@
             <TextField fx:id="UsernameField" layoutX="317.0" layoutY="253.0" promptText="Enter Username" />
             <Button fx:id="LoginButton" layoutX="288.0" layoutY="373.0" mnemonicParsing="false" onAction="#LoginPress" text="Login" />
             <Button fx:id="RegisterButton" layoutX="451.0" layoutY="374.0" mnemonicParsing="false" onAction="#RegisterPress" text="Register" />
-            <Label fx:id="personnelScene" layoutX="294.0" layoutY="413.0" prefHeight="62.0" prefWidth="226.0" />
+            <Label fx:id="ErrorLabel" layoutX="294.0" layoutY="413.0" prefHeight="62.0" prefWidth="226.0" />
          </children>
       </AnchorPane>
    </center>
