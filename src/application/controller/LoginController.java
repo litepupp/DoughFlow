@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class LoginController {
 	@FXML
-	private Scene personnelScene;
+	private Scene loginScene;
 	@FXML
 	private Label ErrorLabel;
 	@FXML
