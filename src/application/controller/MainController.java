@@ -4,26 +4,31 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 
-import application.model.Login;
+import application.model.*;
 
 public class MainController {
 	
 	public Login currentLogin;
+	public User currentUser;
 	
+	@FXML
+	private Label WelcomeLabel;
 	@FXML
 	TextArea currentCycle;
 	@FXML
 	Button refreshButton;
 	
-	public void initializeLogin(Login login) throws IOException {
+	public void initializeUser(Login login, User user) throws IOException {
 		this.currentLogin = login;
+		this.currentUser = user;
 		
-		
+		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
 	}
 	
 	public void refreshCycle(ActionEvent actionEvent) {

@@ -12,8 +12,8 @@ import application.model.*;
 
 public class User {
 	
-	private String name;
-	private String username;
+	public String name;
+	public String username;
 	private String password;
 	private ArrayList<Event> Events;
 	

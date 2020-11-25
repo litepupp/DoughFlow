@@ -18,7 +18,7 @@ import application.model.*;
 
 public class LoginController {
 	
-	Login currentLogin;
+	public Login currentLogin;
 	boolean alreadyLoad;
 	
 	@FXML
@@ -63,7 +63,7 @@ public class LoginController {
 			Scene mainScene = new Scene(mainRoot);
 			
 			MainController mainController = mainLoader.getController();
-			mainController.initializeLogin(currentLogin);
+			mainController.initializeUser(currentLogin, currentLogin.logins.get(username));
 			
 			Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			mainStage.setScene(mainScene);

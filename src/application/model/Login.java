@@ -13,7 +13,7 @@ import application.model.*;
 
 public class Login {
 	
-	public HashMap<String, User> logins;
+	public HashMap<String, User> logins; //<Username, User data>
 	
 	public void loadLogins(String path) {
 		Path pathToLogins = Paths.get(path);
@@ -29,7 +29,7 @@ public class Login {
                 
                 tempUser.loadEvents("data/events.csv");
                 
-                logins.put(data[0], tempUser);
+                this.logins.put(data[1], tempUser);
                 
                 System.out.println(data[0] + "/" + data[1] + " Loaded!");
                 
@@ -44,8 +44,8 @@ public class Login {
 	public boolean registerUser(String name, String username, String password) {
 		User temp = new User(name, username, password);
 		
-		if (ifAlreadyExists(username, temp) == false) {
-			this.logins.put(name, temp);
+		if (ifAlreadyExists(username) == false) {
+			this.logins.put(username, temp);
 			return true;
 		}
 		else {
@@ -53,7 +53,7 @@ public class Login {
 		}
 	}
 	
-	public boolean ifAlreadyExists(String username, User temp) {
+	public boolean ifAlreadyExists(String username) {
 		for (String i : this.logins.keySet()) {
 			  if (i.equals(username)) {
 				  return true;

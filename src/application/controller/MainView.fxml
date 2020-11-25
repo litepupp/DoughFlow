@@ -10,16 +10,6 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
-   <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Main View" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="34.0" />
-         </font>
-         <BorderPane.margin>
-            <Insets bottom="10.0" top="10.0" />
-         </BorderPane.margin>
-      </Text>
-   </top>
    <right>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <top>
@@ -83,4 +73,11 @@
          </children>
       </AnchorPane>
    </center>
+   <top>
+      <Label fx:id="WelcomeLabel" prefHeight="43.0" prefWidth="423.0" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+   </top>
 </BorderPane>
