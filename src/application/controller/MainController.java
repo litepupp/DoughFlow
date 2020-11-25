@@ -38,11 +38,17 @@ public class MainController {
 		this.currentUser = user;
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
+		dateSet();
+		
+		
 	}
 	
 	public void refreshCycle(ActionEvent actionEvent) {
 		System.out.println("Refresh Button Pressed");
-		
+		dateSet();
+	}
+	
+	public void dateSet() {
 		LocalDate date = LocalDate.now();
         int month = date.getMonthValue();
 
