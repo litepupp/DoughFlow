@@ -20,9 +20,9 @@ public class MainController {
 	@FXML
 	private Label WelcomeLabel;
 	@FXML
-	TextArea currentCycle;
+	private Label currentCycle;
 	@FXML
-	Button refreshButton;
+	private Button refreshButton;
 	
 	public void initializeUser(Login login, User user) throws IOException {
 		this.currentLogin = login;

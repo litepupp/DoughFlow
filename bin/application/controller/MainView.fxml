@@ -58,18 +58,8 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <BorderPane prefHeight="549.0" prefWidth="388.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <top>
-                  <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshCycle" text="Refresh" BorderPane.alignment="CENTER">
-                     <graphic>
-                        <TextArea fx:id="currentCycle" prefHeight="26.0" prefWidth="200.0" />
-                     </graphic>
-                  </Button>
-               </top>
-               <center>
-                  <DatePicker BorderPane.alignment="CENTER" />
-               </center>
-            </BorderPane>
+            <Button fx:id="refreshButton" layoutX="314.0" layoutY="21.0" mnemonicParsing="false" onAction="#refreshCycle" text="Refresh" />
+            <Label layoutX="76.0" layoutY="10.0" prefHeight="43.0" prefWidth="223.0" textAlignment="CENTER" />
          </children>
       </AnchorPane>
    </center>
