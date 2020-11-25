@@ -14,7 +14,7 @@ public class User {
 	
 	public String name;
 	public String username;
-	private String password;
+	public String password;
 	private ArrayList<Event> Events;
 	
 	public void loadEvents(String path) {
