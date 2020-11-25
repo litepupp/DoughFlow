@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import application.Main;
 import application.model.*;
 
 public class LoginController {
@@ -57,7 +58,7 @@ public class LoginController {
 			System.out.println("Successful login, username: " + username);
 			
 			FXMLLoader mainLoader = new FXMLLoader();
-			mainLoader.setLocation(getClass().getResource("controller/MainView.fxml"));
+			mainLoader.setLocation(Main.class.getResource("controller/MainView.fxml"));
 			
 			Parent mainRoot = mainLoader.load();
 			Scene mainScene = new Scene(mainRoot);
