@@ -4,17 +4,27 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 
+import application.model.Login;
+
 public class MainController {
 	
-	//TEST TEST
+	public Login currentLogin;
 	
 	@FXML
 	TextArea currentCycle;
 	@FXML
 	Button refreshButton;
+	
+	public void initializeLogin(Login login) throws IOException {
+		this.currentLogin = login;
+		
+		
+	}
 	
 	public void refreshCycle(ActionEvent actionEvent) {
 		System.out.println("Refresh Button Pressed");
@@ -34,4 +44,5 @@ public class MainController {
         
 		currentCycle.setText("Current Cycle:\n" + firstDay + " > " + lastDay);
 	}
+	
 }

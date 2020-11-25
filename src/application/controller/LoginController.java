@@ -46,9 +46,34 @@ public class LoginController {
 		String username = UsernameField.getText();
 		String password = PasswordField.getText();
 		
+		if (alreadyLoad == false) {
+			initializeLogins();
+			this.alreadyLoad = true;
+		}
 		
-		ErrorLabel.setText("Error not really");
+		boolean loginResult = currentLogin.validateLogin(username, password);
 		
+		if (loginResult == true) {
+			System.out.println("Successful login, username: " + username);
+			
+			FXMLLoader mainLoader = new FXMLLoader();
+			mainLoader.setLocation(getClass().getResource("controller/MainView.fxml"));
+			
+			Parent mainRoot = mainLoader.load();
+			Scene mainScene = new Scene(mainRoot);
+			
+			MainController mainController = mainLoader.getController();
+			mainController.initializeLogin(currentLogin);
+			
+			Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			mainStage.setScene(mainScene);
+			mainStage.show();
+		}
+		else
+		{
+			ErrorLabel.setText("Error: Incorrect username/password");
+		}
+
 	}
 	
 	public void RegisterPress(ActionEvent event) throws IOException {
@@ -62,7 +87,9 @@ public class LoginController {
 			this.alreadyLoad = true;
 		}
 		
-		if (currentLogin.registerUser(name, username, password) == true) {
+		boolean registerResult = currentLogin.registerUser(name, username, password);
+		
+		if (registerResult == true) {
 			ErrorLabel.setText("User [" + name + "/" + username + "] registered!");
 			currentLogin.printAllUsers();
 			
@@ -74,10 +101,4 @@ public class LoginController {
 		
 	}
 	
-	/*
-	public void setPersonnelScene(Scene scene) {
-		personnelScene = scene;
-		
-	}
-	*/
 }

@@ -67,13 +67,21 @@ public class Login {
 	}
 	
 	public boolean validateLogin(String username, String password) {
-		
+		for (String i : this.logins.keySet()) {
+			  if (i.equals(username)) {
+				  if (this.logins.get(i).equals(password)) {
+					  System.out.println("Login successful, user: " + username);
+					  return true;
+				  }
+			  }
+		}
+		return false;
 	}
 	
 	public void printAllUsers() {
 		for (String i : this.logins.keySet()) {
 			  System.out.println("Name: " + i + " DATA: " + this.logins.get(i));
-			}
+		}
 	}
 	
 	public Login() {
