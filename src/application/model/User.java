@@ -41,6 +41,10 @@ public class User {
 			IOe.printStackTrace();
         }
 	}
+	
+	public void writeNewEvent(String path) {
+		
+	}
 
 	User(String name, String username, String password) {
 		this.name = name;
