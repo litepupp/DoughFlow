@@ -19,7 +19,7 @@ import application.model.*;
 
 public class LoginController {
 	
-	public Login currentLogin;
+	public static Login currentLogin;
 	boolean alreadyLoad;
 	
 	@FXML

@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
+import java.util.EventObject;
 
 import application.Main;
 import application.model.*;
@@ -58,8 +59,9 @@ public class MainController {
 		currentCycle.setText("Current Cycle:\n" + firstDay + " > " + lastDay);
 	}
 	
-	public void logout(ActionEvent actionEvent) {
+	public void logout(ActionEvent event) throws IOException{
 		System.out.println("Logging out: " + currentUser.username);
+		LoginController.currentLogin = currentLogin;
 		
 		FXMLLoader loginLoader = new FXMLLoader();
 		loginLoader.setLocation(Main.class.getResource("controller/LoginView.fxml"));
