@@ -27,7 +27,7 @@ public class Login {
                 
                 User tempUser = new User(data[0], data[1], data[2]);
                 
-                //load user events then put to hash
+                tempUser.loadEvents("data/events.csv");
                 
                 logins.put(data[0], tempUser);
                 
