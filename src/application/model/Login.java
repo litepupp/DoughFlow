@@ -66,6 +66,10 @@ public class Login {
 		
 	}
 	
+	public boolean validateLogin(String username, String password) {
+		
+	}
+	
 	public void printAllUsers() {
 		for (String i : this.logins.keySet()) {
 			  System.out.println("Name: " + i + " DATA: " + this.logins.get(i));
