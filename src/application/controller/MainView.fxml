@@ -13,9 +13,15 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="WelcomeLabel" layoutX="164.0" layoutY="14.0" prefHeight="58.0" prefWidth="473.0" textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="WelcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="164.0" layoutY="14.0" prefHeight="58.0" prefWidth="473.0" text="temp" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="31.0" />
+               </font></Label>
             <Button fx:id="logoutButton" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" text="LOGOUT" />
-            <Label fx:id="currentCycle" layoutX="317.0" layoutY="73.0" prefHeight="36.0" prefWidth="172.0" textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="currentCycle" alignment="CENTER" contentDisplay="CENTER" layoutX="317.0" layoutY="73.0" prefHeight="36.0" prefWidth="172.0" text="temp" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
             <Button fx:id="refreshButton" layoutX="492.0" layoutY="78.0" mnemonicParsing="false" onAction="#refreshCycle" text="Refresh" />
          </children>
       </AnchorPane>
