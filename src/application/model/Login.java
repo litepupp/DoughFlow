@@ -71,7 +71,6 @@ public class Login {
 			  if (i.equals(username)) {
 				  User tempUser = this.logins.get(i);
 				  if (tempUser.password.equals(password)) {
-					  System.out.println("Login successful, user: " + username);
 					  return true;
 				  }
 			  }
