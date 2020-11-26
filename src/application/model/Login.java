@@ -62,7 +62,11 @@ public class Login {
 		return false;
 	}
 	
-	public void writeNewUser(String path) {
+	public void writeNewUserFile(String path) {
+		
+	}
+	
+	public void removeUserFile(String path, String name) {
 		
 	}
 	

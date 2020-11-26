@@ -18,11 +18,33 @@
                   <Font size="31.0" />
                </font></Label>
             <Button fx:id="logoutButton" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" text="LOGOUT" />
-            <Label fx:id="currentCycle" alignment="CENTER" contentDisplay="CENTER" layoutX="267.0" layoutY="74.0" prefHeight="36.0" prefWidth="267.0" text="Current Cycle: test test test test test" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="currentCycle" alignment="CENTER" contentDisplay="CENTER" layoutX="267.0" layoutY="75.0" prefHeight="36.0" prefWidth="267.0" text="Current Cycle: test test test test test" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="12.0" />
                </font></Label>
-            <Button fx:id="refreshButton" layoutX="534.0" layoutY="79.0" mnemonicParsing="false" onAction="#refreshCycle" text="Refresh" />
+            <Button fx:id="refreshButton" layoutX="201.0" layoutY="80.0" mnemonicParsing="false" onAction="#refreshCycle" text="Refresh" />
+            <Button fx:id="AddEventButton" layoutX="20.0" layoutY="80.0" mnemonicParsing="false" onAction="#AddNewEvent" text="Add Event" />
+            <Button fx:id="DeleteEventButton" layoutX="20.0" layoutY="125.0" mnemonicParsing="false" onAction="#DeleteEvent" text="Delete Event" />
+            <Accordion layoutX="589.0" layoutY="14.0" prefHeight="564.0" prefWidth="203.0">
+              <panes>
+                <TitledPane animated="false" text="This Week">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Next Week">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Next Month">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <PieChart layoutX="204.0" layoutY="125.0" prefHeight="305.0" prefWidth="379.0" title="Expenses" />
          </children>
       </AnchorPane>
    </center>

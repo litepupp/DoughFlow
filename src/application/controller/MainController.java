@@ -32,6 +32,10 @@ public class MainController {
 	private Button refreshButton;
 	@FXML
 	private Button logoutButton;
+	@FXML
+	private Button AddEventButton;
+	@FXML
+	private Button DeleteEventButton;
 	
 	public void initializeUser(Login login, User user) throws IOException {
 		this.currentLogin = login;
@@ -46,6 +50,18 @@ public class MainController {
 	public void refreshCycle(ActionEvent actionEvent) {
 		System.out.println("Refresh Button Pressed");
 		dateSet();
+	}
+	
+	public void AddNewEvent(ActionEvent actionEvent) {
+		System.out.println("Add New Event Pressed");
+		
+		
+	}
+	
+	public void DeleteEvent(ActionEvent actionEvent) {
+		System.out.println("Delete Event Pressed");
+		
+		
 	}
 	
 	public void dateSet() {

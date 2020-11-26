@@ -42,7 +42,11 @@ public class User {
         }
 	}
 	
-	public void writeNewEvent(String path) {
+	public void writeNewEventFile(String path) {
+		
+	}
+	
+	public void deleteEventFile(String path, String name) {
 		
 	}
 
