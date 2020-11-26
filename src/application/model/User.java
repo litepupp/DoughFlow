@@ -72,6 +72,7 @@ public class User {
 		for (Iterator<Event> it = this.Events.iterator(); it.hasNext();) {
 			Event currentEvent = it.next();
 			if (currentEvent.getEventName().equals(name)) {
+				removeEventCategory(currentEvent.getCategory());
 				it.remove();
 			}
 		}
