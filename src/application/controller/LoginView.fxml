@@ -9,8 +9,8 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <PasswordField fx:id="PasswordField" layoutX="317.0" layoutY="304.0" promptText="Enter Password" />
             <TextField fx:id="UsernameField" layoutX="317.0" layoutY="253.0" promptText="Enter Username" />
+            <PasswordField fx:id="PasswordField" layoutX="317.0" layoutY="304.0" promptText="Enter Password" />
             <Button fx:id="LoginButton" layoutX="288.0" layoutY="373.0" mnemonicParsing="false" onAction="#LoginPress" text="Login" />
             <Button fx:id="RegisterButton" layoutX="451.0" layoutY="374.0" mnemonicParsing="false" onAction="#RegisterPress" text="Register" />
             <Label fx:id="ErrorLabel" layoutX="181.0" layoutY="416.0" prefHeight="62.0" prefWidth="440.0" textAlignment="CENTER" />

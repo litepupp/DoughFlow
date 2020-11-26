@@ -1,5 +1,6 @@
 package application.controller;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,12 +29,17 @@ public class DeleteEventController {
 	@FXML
 	private Button ReturnHomeButton;
 	@FXML
-	private ChoiceBox EventChoiceBox;
+	private ChoiceBox<Event> EventChoiceBox;
 	@FXML
 	private TextArea EventTextArea;
 	
 	public void initializeUser(User user) {
 		currentUser = user;
+		
+		EventChoiceBox = new ChoiceBox<Event>();
+		EventChoiceBox.setItems(FXCollections.observableArrayList(currentUser.getEvents()));
+		
+		
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {

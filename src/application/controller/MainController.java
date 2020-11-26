@@ -3,7 +3,6 @@ package application.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -14,7 +13,6 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
-import java.util.EventObject;
 
 import application.Main;
 import application.model.*;
@@ -41,7 +39,7 @@ public class MainController {
 		currentLogin = login;
 		currentUser = user;
 		
-		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
+		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
 		
 	}
@@ -49,7 +47,7 @@ public class MainController {
 	public void initializeUser(User user) throws IOException {
 		currentUser = user;
 		
-		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
+		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
 		
 	}
@@ -104,7 +102,7 @@ public class MainController {
 	}
 	
 	public void logout(ActionEvent event) throws IOException{
-		System.out.println("Logging out: " + currentUser.username);
+		System.out.println("Logging out: " + currentUser.getUsername());
 		LoginController.currentLogin = currentLogin;
 		
 		FXMLLoader loginLoader = new FXMLLoader();
@@ -113,7 +111,7 @@ public class MainController {
 		Parent loginRoot = loginLoader.load();
 		Scene loginScene = new Scene(loginRoot);
 		
-		LoginController loginController = loginLoader.getController();
+		//LoginController loginController = loginLoader.getController();
 		
 		Stage loginStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		loginStage.setScene(loginScene);

@@ -6,10 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-
-import application.model.*;
 
 public class Login {
 	
@@ -25,7 +22,10 @@ public class Login {
 
             	String[] data = line.split(",");
                 
-                User tempUser = new User(data[0], data[1], data[2]);
+                User tempUser = new User();
+                tempUser.setName(data[0]);
+                tempUser.setUsername(data[1]);
+                tempUser.setPassword(data[2]);
                 
                 tempUser.loadEvents("data/events.csv");
                 
@@ -42,7 +42,10 @@ public class Login {
 	}
 	
 	public boolean registerUser(String name, String username, String password) {
-		User temp = new User(name, username, password);
+		User temp = new User();
+		temp.setName(name);
+		temp.setUsername(username);
+		temp.setPassword(password);
 		
 		if (ifAlreadyExists(username) == false) {
 			this.logins.put(username, temp);
@@ -74,7 +77,7 @@ public class Login {
 		for (String i : this.logins.keySet()) {
 			  if (i.equals(username)) {
 				  User tempUser = this.logins.get(i);
-				  if (tempUser.password.equals(password)) {
+				  if (tempUser.getPassword().equals(password)) {
 					  return true;
 				  }
 			  }
