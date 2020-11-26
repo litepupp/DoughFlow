@@ -1,6 +1,5 @@
 package application.controller;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,8 +34,7 @@ public class DeleteEventController {
 	
 	public void initializeUser(User user) {
 		currentUser = user;
-		
-		EventChoiceBox = new ChoiceBox<Event>();
+
 		EventChoiceBox.setItems(currentUser.getEvents());
 		
 		

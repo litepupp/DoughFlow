@@ -10,6 +10,11 @@ public class Event {
 	private int MonthsInterval;
 	private int DaysInterval;
 	
+	public String toString() {
+		String choiceBoxView = "( " + this.EventName + " / " + this.Category + " )";
+		return choiceBoxView;
+	}
+	
 	public String getEventName() {
 		return this.EventName;
 	}

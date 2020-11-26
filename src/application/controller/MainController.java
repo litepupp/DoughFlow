@@ -111,8 +111,6 @@ public class MainController {
 		Parent loginRoot = loginLoader.load();
 		Scene loginScene = new Scene(loginRoot);
 		
-		//LoginController loginController = loginLoader.getController();
-		
 		Stage loginStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		loginStage.setScene(loginScene);
 		loginStage.show();
