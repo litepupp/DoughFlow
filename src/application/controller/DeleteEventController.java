@@ -21,6 +21,7 @@ import application.model.*;
 public class DeleteEventController {
 	
 	public static User currentUser;
+	private Event selectedEvent;
 	
 	@FXML
 	private Label StatusLabel;
@@ -38,7 +39,7 @@ public class DeleteEventController {
 
 		EventChoiceBox.setItems(currentUser.getEvents());
 		EventChoiceBox.setTooltip(new Tooltip("Select an Event to Delete"));
-		
+		DeleteButton.setDisable(true);
 		
 	}
 	
@@ -47,6 +48,17 @@ public class DeleteEventController {
 		
 		EventTextArea.setText(selectedEvent.getFullInfo());
 		StatusLabel.setText("Status: Event Selected");
+		DeleteButton.setDisable(false);
+		
+	}
+	
+	public void deleteEventPress(ActionEvent event) throws IOException {
+		String temp = selectedEvent.getEventName();
+		
+		currentUser.removeEvent(selectedEvent.getEventName());
+		currentUser.updateEventCategories();
+		
+		StatusLabel.setText("Status: \""+ temp +"\" Successfully removed!");
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {

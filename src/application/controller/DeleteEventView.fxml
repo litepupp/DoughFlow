@@ -15,7 +15,7 @@
                <font>
                   <Font name="SF Mono Regular" size="13.0" />
                </font></TextArea>
-            <Button fx:id="DeleteButton" layoutX="164.0" layoutY="261.0" mnemonicParsing="false" text="DELETE" />
+            <Button fx:id="DeleteButton" layoutX="164.0" layoutY="261.0" mnemonicParsing="false" onAction="#deleteEventPress" text="DELETE" />
             <Label fx:id="StatusLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="301.0" prefHeight="57.0" prefWidth="231.0" text="Status: Waiting" textAlignment="CENTER" />
             <Button fx:id="ReturnHomeButton" layoutX="137.0" layoutY="440.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="27.0" prefWidth="115.0" text="Return to Home" />
             <Text layoutX="140.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Event">

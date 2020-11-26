@@ -28,6 +28,7 @@ public class Login {
                 tempUser.setPassword(data[2]);
                 
                 tempUser.loadEvents("data/events.csv");
+                tempUser.updateEventCategories();
                 
                 this.logins.put(data[1], tempUser);
                 

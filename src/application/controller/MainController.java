@@ -54,9 +54,11 @@ public class MainController {
 		currentUser.printEventCategories();
 	}
 	
-	public void refreshCycle(ActionEvent actionEvent) {
+	public void refreshPage(ActionEvent actionEvent) {
 		System.out.println("Refresh Button Pressed");
+		
 		dateSet();
+		
 	}
 	
 	public void setAccordion() {
@@ -94,11 +96,9 @@ public class MainController {
 
         //start of month :
         LocalDate firstDay = date.withDayOfMonth(1);
-        System.out.println("firstDay=" + firstDay);
 
         //end of month
         LocalDate lastDay = date.with(TemporalAdjusters.lastDayOfMonth());
-        System.out.println("lastDay=" + lastDay);
         
 		currentCycle.setText("Current Cycle:\n" + firstDay + " > " + lastDay);
 	}
