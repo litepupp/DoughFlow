@@ -33,10 +33,11 @@ public class User {
                 tempEvent.setAmount(Integer.parseInt(data[3]));
                 tempEvent.setDateStart(data[4]);
                 tempEvent.setMonthsInterval(Integer.parseInt(data[5]));
-                tempEvent.setDaysInterval(Integer.parseInt(data[6]));
+                tempEvent.setWeeksInterval(Integer.parseInt(data[6]));
+                tempEvent.setDaysInterval(Integer.parseInt(data[7]));
                 
                 
-                if (this.Username.equals(data[7])) {
+                if (this.Username.equals(data[8])) {
                 	System.out.println(tempEvent.getEventName() + " added to: " + this.Username);
                 	Events.add(tempEvent);
                 }

@@ -79,7 +79,7 @@ public class MainController {
 		DeleteEventController deleteEventController = deleteEventLoader.getController();
 		deleteEventController.initializeUser(currentUser);
 		
-		Stage deleteEventStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Stage deleteEventStage = new Stage();
 		deleteEventStage.setScene(deleteEventScene);
 		deleteEventStage.show();
 	}

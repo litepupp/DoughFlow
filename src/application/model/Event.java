@@ -8,6 +8,7 @@ public class Event {
 	private int Amount;
 	private String DateStart;
 	private int MonthsInterval;
+	private int WeeksInterval;
 	private int DaysInterval;
 	
 	public String toString() {
@@ -61,6 +62,14 @@ public class Event {
 	
 	public void setMonthsInterval(int monthsInterval) {
 		this.MonthsInterval = monthsInterval;
+	}
+
+	public int getWeeksInterval() {
+		return WeeksInterval;
+	}
+
+	public void setWeeksInterval(int weeksInterval) {
+		WeeksInterval = weeksInterval;
 	}
 
 	public int getDaysInterval() {
