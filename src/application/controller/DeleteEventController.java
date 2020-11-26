@@ -37,7 +37,7 @@ public class DeleteEventController {
 		currentUser = user;
 		
 		EventChoiceBox = new ChoiceBox<Event>();
-		EventChoiceBox.setItems(FXCollections.observableArrayList(currentUser.getEvents()));
+		EventChoiceBox.setItems(currentUser.getEvents());
 		
 		
 	}
