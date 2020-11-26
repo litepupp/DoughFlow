@@ -31,7 +31,7 @@ public class Login {
                 
                 this.logins.put(data[1], tempUser);
                 
-                System.out.println(data[0] + "/" + data[1] + " Loaded!");
+                System.out.println("    " + data[0] + "/" + data[1] + " Loaded!");
                 
                 line = br.readLine();
             }

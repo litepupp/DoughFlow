@@ -25,9 +25,9 @@ public class MainController {
 	public static User currentUser;
 	
 	@FXML
-	private static Label WelcomeLabel;
+	private Label WelcomeLabel;
 	@FXML
-	private static Label currentCycle;
+	private Label currentCycle;
 	@FXML
 	private Button refreshButton;
 	@FXML
@@ -46,7 +46,7 @@ public class MainController {
 		
 	}
 	
-	public static void initializeUser(User user) throws IOException {
+	public void initializeUser(User user) throws IOException {
 		currentUser = user;
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
@@ -69,13 +69,24 @@ public class MainController {
 		
 	}
 	
-	public void DeleteEvent(ActionEvent actionEvent) {
+	public void DeleteEvent(ActionEvent event) throws IOException {
 		System.out.println("Delete Event Pressed");
 		
+		FXMLLoader deleteEventLoader = new FXMLLoader();
+		deleteEventLoader.setLocation(Main.class.getResource("controller/DeleteEventView.fxml"));
 		
+		Parent deleteEventRoot = deleteEventLoader.load();
+		Scene deleteEventScene = new Scene(deleteEventRoot);
+		
+		DeleteEventController deleteEventController = deleteEventLoader.getController();
+		deleteEventController.initializeUser(currentUser);
+		
+		Stage deleteEventStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		deleteEventStage.setScene(deleteEventScene);
+		deleteEventStage.show();
 	}
 	
-	public static void dateSet() {
+	public void dateSet() {
 		LocalDate date = LocalDate.now();
         int month = date.getMonthValue();
 
