@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
 
+<BorderPane prefHeight="500.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="140.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Event">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <ChoiceBox layoutX="45.0" layoutY="73.0" prefHeight="27.0" prefWidth="305.0" />
+            <Button layoutX="163.0" layoutY="236.0" mnemonicParsing="false" text="DELETE" />
+            <TextArea layoutX="50.0" layoutY="114.0" prefHeight="104.0" prefWidth="290.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="274.0" prefHeight="57.0" prefWidth="231.0" text="temp" textAlignment="CENTER" />
+            <Button layoutX="137.0" layoutY="440.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="115.0" text="Return to Home" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
