@@ -52,6 +52,10 @@ public class MainController {
 		dateSet();
 	}
 	
+	public void setAccordion() {
+		
+	}
+	
 	public void AddNewEvent(ActionEvent actionEvent) {
 		System.out.println("Add New Event Pressed");
 		
