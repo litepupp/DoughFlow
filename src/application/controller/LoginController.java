@@ -38,6 +38,16 @@ public class LoginController {
 	@FXML
 	private Button RegisterButton;
 	
+	public boolean checkBeforeRegister() {
+		
+		if (NameField.getText().trim().isEmpty() || UsernameField.getText().trim().isEmpty() || PasswordField.getText().trim().isEmpty()) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
 	public void initializeLogins() {
 		currentLogin = new Login();
 		currentLogin.loadLogins("data/logins.csv");
@@ -90,16 +100,21 @@ public class LoginController {
 			this.alreadyLoad = true;
 		}
 		
-		boolean registerResult = currentLogin.registerUser(name, username, password);
-		
-		if (registerResult == true) {
-			ErrorLabel.setText("User [" + name + "/" + username + "] registered!");
-			currentLogin.printAllUsers();
+		if (checkBeforeRegister()) {
 			
+			boolean registerResult = currentLogin.registerUser(name, username, password);
 			
+			if (registerResult == true) {
+				ErrorLabel.setText("User [" + name + "/" + username + "] registered!");
+				currentLogin.printAllUsers();
+			}
+			
+			else {
+				ErrorLabel.setText("Error: User [" + name + "/" + username + "] already exists");
+			}
 		}
 		else {
-			ErrorLabel.setText("Error: User [" + name + "/" + username + "] already exists");
+			ErrorLabel.setText("Error: FILL OUT ALL FIELDS BEFORE REGISTERING");
 		}
 		
 	}
