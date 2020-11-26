@@ -18,7 +18,7 @@ import application.Main;
 import application.model.*;
 
 public class LoginController {
-	
+		
 	public static Login currentLogin;
 	public static User userToBeLogin;
 	boolean alreadyLoad;
@@ -28,25 +28,15 @@ public class LoginController {
 	@FXML
 	private Label ErrorLabel;
 	@FXML
-	private TextField NameField;
+	public TextField NameField;
 	@FXML
-	private TextField UsernameField;
+	public TextField UsernameField;
 	@FXML
-	private PasswordField PasswordField;
+	public PasswordField PasswordField;
 	@FXML
-	private Button LoginButton;
+	public Button LoginButton;
 	@FXML
-	private Button RegisterButton;
-	
-	public boolean checkBeforeRegister() {
-		
-		if (NameField.getText().trim().isEmpty() || UsernameField.getText().trim().isEmpty() || PasswordField.getText().trim().isEmpty()) {
-			return false;
-		}
-		else {
-			return true;
-		}
-	}
+	public Button RegisterButton;
 	
 	public void initializeLogins() {
 		currentLogin = new Login();
@@ -100,21 +90,15 @@ public class LoginController {
 			this.alreadyLoad = true;
 		}
 		
-		if (checkBeforeRegister()) {
-			
-			boolean registerResult = currentLogin.registerUser(name, username, password);
-			
-			if (registerResult == true) {
-				ErrorLabel.setText("User [" + name + "/" + username + "] registered!");
-				currentLogin.printAllUsers();
-			}
-			
-			else {
-				ErrorLabel.setText("Error: User [" + name + "/" + username + "] already exists");
-			}
+		boolean registerResult = currentLogin.registerUser(name, username, password);
+		
+		if (registerResult == true) {
+			ErrorLabel.setText("User [" + name + "/" + username + "] registered!");
+			currentLogin.printAllUsers();
 		}
+		
 		else {
-			ErrorLabel.setText("Error: FILL OUT ALL FIELDS BEFORE REGISTERING");
+			ErrorLabel.setText("Error: User [" + name + "/" + username + "] already exists");
 		}
 		
 	}
