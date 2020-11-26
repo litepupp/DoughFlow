@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="500.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DeleteEventController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -16,11 +15,11 @@
                   <Font size="19.0" />
                </font>
             </Text>
-            <ChoiceBox layoutX="45.0" layoutY="73.0" prefHeight="27.0" prefWidth="305.0" />
-            <Button layoutX="163.0" layoutY="236.0" mnemonicParsing="false" text="DELETE" />
-            <TextArea layoutX="50.0" layoutY="114.0" prefHeight="104.0" prefWidth="290.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="274.0" prefHeight="57.0" prefWidth="231.0" text="temp" textAlignment="CENTER" />
-            <Button layoutX="137.0" layoutY="440.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="115.0" text="Return to Home" />
+            <ChoiceBox fx:id="EventChoiceBox" layoutX="45.0" layoutY="73.0" prefHeight="27.0" prefWidth="305.0" />
+            <Button fx:id="DeleteButton" layoutX="163.0" layoutY="236.0" mnemonicParsing="false" text="DELETE" />
+            <TextArea fx:id="EventTextArea" layoutX="50.0" layoutY="114.0" prefHeight="104.0" prefWidth="290.0" />
+            <Label fx:id="completionLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="274.0" prefHeight="57.0" prefWidth="231.0" text="temp" textAlignment="CENTER" />
+            <Button fx:id="ReturnHomeButton" layoutX="137.0" layoutY="440.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="115.0" text="Return to Home" />
          </children>
       </AnchorPane>
    </center>

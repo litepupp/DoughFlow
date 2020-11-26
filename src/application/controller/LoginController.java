@@ -64,7 +64,7 @@ public class LoginController {
 			Scene mainScene = new Scene(mainRoot);
 			
 			MainController mainController = mainLoader.getController();
-			mainController.initializeUser(currentLogin, currentLogin.logins.get(username));
+			mainController.initializeAll(currentLogin, currentLogin.logins.get(username));
 			
 			Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			mainStage.setScene(mainScene);

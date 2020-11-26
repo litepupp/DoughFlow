@@ -6,12 +6,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 import application.model.*;
 
 public class DeleteEventController {
 	
-	public User currentUser;
+	public static User currentUser;
 	
 	@FXML
 	private Label completionLabel;
@@ -24,8 +27,11 @@ public class DeleteEventController {
 	@FXML
 	private TextArea EventTextArea;
 	
-	public void returnHome(ActionEvent actionEvent) {
-		
+	public void returnHome(ActionEvent actionEvent) throws IOException {
+		Stage deleteEventStage = (Stage)ReturnHomeButton.getScene().getWindow();
+		deleteEventStage.close();
+	    
+	    MainController.initializeUser(currentUser);
 	}
 	
 }

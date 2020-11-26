@@ -22,12 +22,12 @@ import application.model.*;
 public class MainController {
 	
 	public Login currentLogin;
-	public User currentUser;
+	public static User currentUser;
 	
 	@FXML
-	private Label WelcomeLabel;
+	private static Label WelcomeLabel;
 	@FXML
-	private Label currentCycle;
+	private static Label currentCycle;
 	@FXML
 	private Button refreshButton;
 	@FXML
@@ -37,13 +37,20 @@ public class MainController {
 	@FXML
 	private Button DeleteEventButton;
 	
-	public void initializeUser(Login login, User user) throws IOException {
+	public void initializeAll(Login login, User user) throws IOException {
 		this.currentLogin = login;
 		this.currentUser = user;
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
 		dateSet();
 		
+	}
+	
+	public static void initializeUser(User user) throws IOException {
+		currentUser = user;
+		
+		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
+		dateSet();
 		
 	}
 	
@@ -68,7 +75,7 @@ public class MainController {
 		
 	}
 	
-	public void dateSet() {
+	public static void dateSet() {
 		LocalDate date = LocalDate.now();
         int month = date.getMonthValue();
 
