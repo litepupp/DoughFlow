@@ -6,6 +6,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Iterator;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
@@ -67,10 +69,19 @@ public class User {
 	}
 	
 	public void removeEvent(String name) {
-		for (Event i : this.Events) {
-			if (i.getEventName().equals(name)) {
-				this.Events.remove(i);
-				System.out.println("Removed Event: " + name);
+		for (Iterator<Event> it = this.Events.iterator(); it.hasNext();) {
+			Event currentEvent = it.next();
+			if (currentEvent.getEventName().equals(name)) {
+				it.remove();
+			}
+		}
+	}
+	
+	public void removeEventCategory(String name) {
+		for (String i : this.EventCategories) {
+			if (i.equals(name)) {
+				this.EventCategories.remove(name);
+				System.out.println(name + " Cat REMOVED");
 			}
 		}
 	}

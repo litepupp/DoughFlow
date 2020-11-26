@@ -44,7 +44,7 @@ public class DeleteEventController {
 	}
 	
 	public void selectedChoice() {
-		Event selectedEvent = EventChoiceBox.getSelectionModel().getSelectedItem();
+		selectedEvent = EventChoiceBox.getSelectionModel().getSelectedItem();
 		
 		EventTextArea.setText(selectedEvent.getFullInfo());
 		StatusLabel.setText("Status: Event Selected");
@@ -57,8 +57,12 @@ public class DeleteEventController {
 		
 		currentUser.removeEvent(selectedEvent.getEventName());
 		currentUser.updateEventCategories();
+		currentUser.printEventCategories();
 		
+		DeleteButton.setDisable(true);
+		EventTextArea.clear();
 		StatusLabel.setText("Status: \""+ temp +"\" Successfully removed!");
+
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {
