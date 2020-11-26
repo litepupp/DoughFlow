@@ -21,7 +21,7 @@ import application.model.*;
 
 public class MainController {
 	
-	public Login currentLogin;
+	public static Login currentLogin;
 	public static User currentUser;
 	
 	@FXML
@@ -38,8 +38,8 @@ public class MainController {
 	private Button DeleteEventButton;
 	
 	public void initializeAll(Login login, User user) throws IOException {
-		this.currentLogin = login;
-		this.currentUser = user;
+		currentLogin = login;
+		currentUser = user;
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.name + "/" + currentUser.username);
 		dateSet();

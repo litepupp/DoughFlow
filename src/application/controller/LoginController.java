@@ -20,6 +20,7 @@ import application.model.*;
 public class LoginController {
 	
 	public static Login currentLogin;
+	public static User userToBeLogin;
 	boolean alreadyLoad;
 	
 	@FXML
@@ -56,6 +57,7 @@ public class LoginController {
 		
 		if (loginResult == true) {
 			System.out.println("Successful login, username: " + username);
+			userToBeLogin = currentLogin.logins.get(username);
 			
 			FXMLLoader mainLoader = new FXMLLoader();
 			mainLoader.setLocation(Main.class.getResource("controller/MainView.fxml"));
@@ -64,7 +66,7 @@ public class LoginController {
 			Scene mainScene = new Scene(mainRoot);
 			
 			MainController mainController = mainLoader.getController();
-			mainController.initializeAll(currentLogin, currentLogin.logins.get(username));
+			mainController.initializeAll(currentLogin, userToBeLogin);
 			
 			Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			mainStage.setScene(mainScene);
