@@ -16,6 +16,19 @@ public class Event {
 		return choiceBoxView;
 	}
 	
+	public String getFullInfo() {
+		String textAreaInfo = "Event Name:     " + this.EventName + "\n";
+			  textAreaInfo += "Event Type:     " + this.Type + "\n";
+			  textAreaInfo += "Event Category: " + this.Category + "\n";
+			  textAreaInfo += "Amount:         " + this.Amount + "\n";
+			  textAreaInfo += "Starting Date:  " + this.DateStart + "\n";
+			  textAreaInfo += "Every " + this.MonthsInterval + " month(s)\n";
+			  textAreaInfo += "Every " + this.WeeksInterval + "  week(s)\n";
+			  textAreaInfo += "Every " + this.DaysInterval + "   day(s)\n";
+		
+		return textAreaInfo;
+	}
+	
 	public String getEventName() {
 		return this.EventName;
 	}

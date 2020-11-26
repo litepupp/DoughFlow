@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableSet;
 
 public class User {
 	
@@ -15,6 +16,7 @@ public class User {
 	private String Username;
 	private String Password;
 	private ObservableList<Event> Events;
+	private ObservableSet<String> EventCategories;
 	
 	public void loadEvents(String path) {
 		Path pathToEvents = Paths.get(path);
@@ -50,12 +52,41 @@ public class User {
         }
 	}
 	
+	public Event fillEventInfo(Event tempEvent, String data[]) {
+		tempEvent.setEventName(data[0]);
+        tempEvent.setType(data[1]);
+        tempEvent.setCategory(data[2]);
+        tempEvent.setAmount(Integer.parseInt(data[3]));
+        tempEvent.setDateStart(data[4]);
+        tempEvent.setMonthsInterval(Integer.parseInt(data[5]));
+        tempEvent.setWeeksInterval(Integer.parseInt(data[6]));
+        tempEvent.setDaysInterval(Integer.parseInt(data[7]));
+        
+        return tempEvent;
+	}
+	
+	public void initializeEventCategories() {
+		for (Event i : this.Events) {
+			this.EventCategories.add(i.getCategory());
+		}
+	}
+	
+	public void updateEventCategories() {
+		
+	}
+	
 	public void writeNewEventFile(String path) {
 		
 	}
 	
 	public void deleteEventFile(String path, String name) {
 		
+	}
+	
+	public void printEventCategories() {
+		for (String j : this.EventCategories) {
+			System.out.println("Event: " + j);
+		}
 	}
 	
 	public String getName() {
@@ -88,5 +119,6 @@ public class User {
 
 	User() {
 		Events = FXCollections.observableArrayList();
+		EventCategories = FXCollections.observableSet();
 	}
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class DeleteEventController {
 	public static User currentUser;
 	
 	@FXML
-	private Label completionLabel;
+	private Label StatusLabel;
 	@FXML
 	private Button DeleteButton;
 	@FXML
@@ -36,8 +37,16 @@ public class DeleteEventController {
 		currentUser = user;
 
 		EventChoiceBox.setItems(currentUser.getEvents());
+		EventChoiceBox.setTooltip(new Tooltip("Select an Event to Delete"));
 		
 		
+	}
+	
+	public void selectedChoice() {
+		Event selectedEvent = EventChoiceBox.getSelectionModel().getSelectedItem();
+		
+		EventTextArea.setText(selectedEvent.getFullInfo());
+		StatusLabel.setText("Status: Event Selected");
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {
