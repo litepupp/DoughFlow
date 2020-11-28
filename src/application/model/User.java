@@ -94,7 +94,6 @@ public class User {
 		for (String i : this.EventCategories) {
 			if (i.equals(name)) {
 				this.EventCategories.remove(name);
-				System.out.println(name + " Cat REMOVED");
 			}
 		}
 	}

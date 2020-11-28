@@ -27,7 +27,7 @@
             <TextField fx:id="NewEventCategoryTextField" layoutX="34.0" layoutY="187.0" prefHeight="27.0" prefWidth="280.0" promptText="Enter New Category" />
             <Button fx:id="AddEventCategoryButton" layoutX="317.0" layoutY="187.0" mnemonicParsing="false" onAction="#addEventCategory" prefHeight="27.0" prefWidth="43.0" text="Add" />
             <TextField fx:id="EventAmountTextField" layoutX="36.0" layoutY="238.0" prefHeight="27.0" prefWidth="320.0" promptText="Enter Amount (ONLY DIGITS/period)" />
-            <DatePicker fx:id="StartingDatePicker" layoutX="35.0" layoutY="287.0" prefHeight="27.0" prefWidth="322.0" promptText="Enter Starting Date" />
+            <DatePicker fx:id="StartingDatePicker" layoutX="35.0" layoutY="287.0" onAction="#dateSelected" prefHeight="27.0" prefWidth="322.0" promptText="Enter Starting Date" />
             <TextField fx:id="TimeIntervalTextField" layoutX="36.0" layoutY="338.0" promptText="Enter Interval --&gt;" />
             <RadioButton fx:id="EveryMonthRadioButton" layoutX="235.0" layoutY="334.0" mnemonicParsing="false" onAction="#monthSelected" text="Every ___ Month(s)" />
             <RadioButton fx:id="EveryWeekRadioButton" layoutX="235.0" layoutY="367.0" mnemonicParsing="false" onAction="#weekSelected" text="Every ___ Week(s)" />

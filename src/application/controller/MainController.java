@@ -45,7 +45,6 @@ public class MainController {
 		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
 		
-		currentUser.printEventCategories();
 	}
 	
 	public void initializeUser(User user) throws IOException {
@@ -54,7 +53,6 @@ public class MainController {
 		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
 		
-		currentUser.printEventCategories();
 	}
 	
 	public void refreshPage(ActionEvent actionEvent) {

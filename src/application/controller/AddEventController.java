@@ -119,7 +119,7 @@ public class AddEventController {
 	
 	public void dateSelected(ActionEvent event) throws IOException{
 		dateStart = StartingDatePicker.getValue();
-		System.out.println(StartingDatePicker.getValue());
+		System.out.println("Date selected: " + dateStart);
 	}
 	
 	public void expenseSelected(ActionEvent event) throws IOException {
@@ -146,7 +146,7 @@ public class AddEventController {
 		
 		eventName = EventNameTextField.getText();
 		selectedCategory = EventCategoryChoiceBox.getSelectionModel().getSelectedItem();
-		eventAmount = Double.parseDouble(EventNameTextField.getText());
+		eventAmount = Double.parseDouble(EventAmountTextField.getText());
 		interval = Integer.parseInt(TimeIntervalTextField.getText());
 		
 		currentUser.createNewEvent(eventName, selectedCategory, isExpense, eventAmount, dateStart, interval, intervalType);
