@@ -119,7 +119,7 @@ public class AddEventController {
 	
 	public void dateSelected(ActionEvent event) throws IOException{
 		dateStart = StartingDatePicker.getValue();
-		System.out.println(StartingDatePicker.getValue());
+		System.out.println("Date selected: " + dateStart);
 	}
 	
 	public void expenseSelected(ActionEvent event) throws IOException {
