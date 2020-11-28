@@ -94,6 +94,11 @@ public class User {
 		}
 	}
 	
+	public void addEventCategory(String newEventCat) {
+		this.EventCategories.add(newEventCat);
+		
+	}
+	
 	public String getName() {
 		return this.Name;
 	}

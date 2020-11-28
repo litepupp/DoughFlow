@@ -106,7 +106,10 @@ public class AddEventController {
 	
 	public void addEventCategory(ActionEvent event) throws IOException {
 		
+		String newEventCat = NewEventCategoryTextField.getText();
 		
+		currentUser.addEventCategory(newEventCat);
+		StatusLabel.setText("Status: New Category Added!");
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {
