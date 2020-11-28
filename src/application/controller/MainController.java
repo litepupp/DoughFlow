@@ -97,7 +97,10 @@ public class MainController {
 			    Bindings.isEmpty(addEventController.NewEventCategoryTextField.textProperty())
 			);
 		
-		Stage addEventStage = new Stage();
+		//This causes the return button to consistently create new home pages
+				//Stage addEventStage = new Stage();
+		//This Stage declaration fixes that
+		Stage addEventStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 		addEventStage.setScene(addEventScene);
 		addEventStage.show();
 	}
@@ -114,7 +117,9 @@ public class MainController {
 		DeleteEventController deleteEventController = deleteEventLoader.getController();
 		deleteEventController.initializeUser(currentUser);
 		
-		Stage deleteEventStage = new Stage();
+		//Stage deleteEventStage = new Stage();
+		//Same as above with AddNewEvent()
+		Stage deleteEventStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		deleteEventStage.setScene(deleteEventScene);
 		deleteEventStage.show();
 	}
@@ -131,7 +136,9 @@ public class MainController {
 		CalendarController calendarController = calendarLoader.getController();
 		calendarController.initializeUser(currentUser);
 		
-		Stage calendarStage = new Stage();
+		//Stage calendarStage = new Stage();
+		//Same as above with AddNewEvent() and DeleteEvent()
+		Stage calendarStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		calendarStage.setScene(calendarScene);
 		calendarStage.show();
 	}
