@@ -31,7 +31,7 @@ public class AddEventController {
 	@FXML
 	private Label StatusLabel;
 	@FXML
-	public Button CreateNewEventButton;
+	private Button CreateNewEventButton;
 	@FXML
 	private Button AddEventCategoryButton;
 	@FXML
