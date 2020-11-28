@@ -65,10 +65,21 @@ public class MainController {
 		
 	}
 	
-	public void AddNewEvent(ActionEvent actionEvent) {
+	public void AddNewEvent(ActionEvent actionEvent) throws IOException {
 		System.out.println("Add New Event Pressed");
 		
+		FXMLLoader addEventLoader = new FXMLLoader();
+		addEventLoader.setLocation(Main.class.getResource("controller/AddEventView.fxml"));
 		
+		Parent addEventRoot = addEventLoader.load();
+		Scene addEventScene = new Scene(addEventRoot);
+		
+		AddEventController addEventController = addEventLoader.getController();
+		addEventController.initializeUser(currentUser);
+		
+		Stage addEventStage = new Stage();
+		addEventStage.setScene(addEventScene);
+		addEventStage.show();
 	}
 	
 	public void DeleteEvent(ActionEvent event) throws IOException {

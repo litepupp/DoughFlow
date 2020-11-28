@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<BorderPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AddEventController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="127.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Event">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="EventNameTextField" layoutX="36.0" layoutY="59.0" prefHeight="27.0" prefWidth="327.0" promptText="Enter Event Name" />
+            <ChoiceBox fx:id="EventCategoryChoiceBox" layoutX="34.0" layoutY="157.0" prefHeight="27.0" prefWidth="326.0" />
+            <Text layoutX="32.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Event Category or Create New">
+               <font>
+                  <Font name="SF Mono Regular" size="11.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="ExpenseRadioButton" layoutX="38.0" layoutY="107.0" mnemonicParsing="false" text="Expense" />
+            <RadioButton fx:id="IncomeRadioButton" layoutX="259.0" layoutY="107.0" mnemonicParsing="false" text="Income" />
+            <TextField fx:id="NewEventCategoryTextField" layoutX="34.0" layoutY="187.0" prefHeight="27.0" prefWidth="280.0" promptText="Enter New Category" />
+            <Button fx:id="AddEventCategoryButton" layoutX="317.0" layoutY="187.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="43.0" text="Add" />
+            <TextField fx:id="EventAmountTextField" layoutX="36.0" layoutY="238.0" prefHeight="27.0" prefWidth="320.0" promptText="Enter Amount (ONLY DIGITS)" />
+            <DatePicker fx:id="StartingDatePicker" layoutX="35.0" layoutY="287.0" prefHeight="27.0" prefWidth="322.0" promptText="Enter Starting Date" />
+            <TextField fx:id="EventTimeIntervalTextField" layoutX="36.0" layoutY="338.0" promptText="Enter Interval --&gt;" />
+            <RadioButton fx:id="EveryMonthRadioButton" layoutX="235.0" layoutY="334.0" mnemonicParsing="false" text="Every ___ Month(s)" />
+            <RadioButton fx:id="EveryWeekRadioButton" layoutX="235.0" layoutY="367.0" mnemonicParsing="false" text="Every ___ Week(s)" />
+            <RadioButton fx:id="EveryDayRadioButton" layoutX="235.0" layoutY="398.0" mnemonicParsing="false" text="Every ___ Day(s)" />
+            <Button fx:id="CreateNewEventButton" layoutX="90.0" layoutY="382.0" mnemonicParsing="false" text="CREATE" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="441.0" prefHeight="41.0" prefWidth="253.0" text="Status: Waiting" textAlignment="CENTER" />
+            <Button fx:id="ReturnHomeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="443.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="36.0" prefWidth="67.0" text="Return to Home" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
-

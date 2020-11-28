@@ -3,7 +3,7 @@ package application.model;
 public class Event {
 	
 	private String EventName;
-	private String Type;
+	private boolean IsExpense;
 	private String Category;
 	private int Amount;
 	private String DateStart;
@@ -18,7 +18,14 @@ public class Event {
 	
 	public String getFullInfo() {
 		String textAreaInfo = "Event Name:     " + this.EventName + "\n";
-			  textAreaInfo += "Event Type:     " + this.Type + "\n";
+		
+		if (this.IsExpense == true) {
+			  textAreaInfo += "Event Type:     Expense\n";
+		}
+		else {
+			  textAreaInfo += "Event Type:     Income\n";
+		}
+			
 			  textAreaInfo += "Event Category: " + this.Category + "\n";
 			  textAreaInfo += "Amount:         " + this.Amount + "\n";
 			  textAreaInfo += "Starting Date:  " + this.DateStart + "\n";
@@ -37,12 +44,12 @@ public class Event {
 		this.EventName = eventName;
 	}
 	
-	public String getType() {
-		return this.Type;
+	public boolean getIsExpense() {
+		return this.IsExpense;
 	}
 	
-	public void setType(String type) {
-		this.Type = type;
+	public void setIsExpense(boolean isExpense) {
+		this.IsExpense = isExpense;
 	}
 	
 	public String getCategory() {

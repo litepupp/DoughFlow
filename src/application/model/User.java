@@ -32,7 +32,7 @@ public class User {
                 
                 Event tempEvent = new Event();
                 tempEvent.setEventName(data[0]);
-                tempEvent.setType(data[1]);
+                tempEvent.setIsExpense(Boolean.parseBoolean(data[1]));
                 tempEvent.setCategory(data[2]);
                 tempEvent.setAmount(Integer.parseInt(data[3]));
                 tempEvent.setDateStart(data[4]);
@@ -119,6 +119,10 @@ public class User {
 	
 	public ObservableList<Event> getEvents() {
 		return this.Events;
+	}
+	
+	public ObservableSet<String> getEventCategories() {
+		return this.EventCategories;
 	}
 
 	User() {
