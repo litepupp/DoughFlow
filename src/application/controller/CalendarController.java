@@ -23,10 +23,33 @@ public class CalendarController {
 	private Button PrevMonthButton;
 	@FXML
 	private Button ReturnHomeButton;
+	@FXML
+	private Button DayButton1, DayButton2, DayButton3, DayButton4, DayButton5, DayButton6, DayButton7,
+	DayButton8, DayButton9, DayButton10, DayButton11, DayButton12, DayButton13, DayButton14, DayButton15,
+	DayButton16, DayButton17, DayButton18, DayButton19, DayButton20, DayButton21, DayButton22, DayButton23,
+	DayButton24, DayButton25, DayButton26, DayButton27, DayButton28, DayButton29, DayButton30, DayButton31,
+	DayButton32, DayButton33, DayButton34, DayButton35;
 	
 	public void initializeUser(User user) {
 		currentUser = user;
 		
+	}
+	
+	public void viewDay(ActionEvent event) throws IOException{
+		//(Button)event.getSource();
+		
+		FXMLLoader dayLoader = new FXMLLoader();
+		dayLoader.setLocation(Main.class.getResource("controller/DayView.fxml"));
+		
+		Parent dayRoot = dayLoader.load();
+		Scene dayScene = new Scene(dayRoot);
+		
+		DayController dayController = dayLoader.getController();
+		dayController.initializeUser(currentUser);
+		
+		Stage dayStage = new Stage();
+		dayStage.setScene(dayScene);
+		dayStage.show();
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {
