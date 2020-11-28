@@ -31,25 +31,25 @@ public class AddEventController {
 	@FXML
 	private Label StatusLabel;
 	@FXML
-	private Button CreateNewEventButton;
+	public Button CreateNewEventButton;
 	@FXML
 	private Button AddEventCategoryButton;
 	@FXML
 	private Button ReturnHomeButton;
 	@FXML
-	private ChoiceBox<String> EventCategoryChoiceBox;
+	public ChoiceBox<String> EventCategoryChoiceBox;
 	@FXML
 	private RadioButton ExpenseRadioButton;
 	@FXML
 	private RadioButton IncomeRadioButton;
 	@FXML
-	private TextField EventNameTextField;
+	public TextField EventNameTextField;
 	@FXML
 	private TextField NewEventCategoryTextField;
 	@FXML
-	private TextField EventAmountTextField;
+	public TextField EventAmountTextField;
 	@FXML
-	private DatePicker StartingDatePicker;
+	public DatePicker StartingDatePicker;
 	@FXML
 	private TextField EventTimeIntervalTextField;
 	@FXML

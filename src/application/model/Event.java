@@ -1,12 +1,14 @@
 package application.model;
 
+import java.time.LocalDate;
+
 public class Event {
 	
 	private String EventName;
 	private boolean IsExpense;
 	private String Category;
 	private int Amount;
-	private String DateStart;
+	private LocalDate DateStart;
 	private int MonthsInterval;
 	private int WeeksInterval;
 	private int DaysInterval;
@@ -68,11 +70,11 @@ public class Event {
 		this.Amount = amount;
 	}
 
-	public String getDateStart() {
+	public LocalDate getDateStart() {
 		return this.DateStart;
 	}
 	
-	public void setDateStart(String dateStart) {
+	public void setDateStart(LocalDate dateStart) {
 		this.DateStart = dateStart;
 	}
 

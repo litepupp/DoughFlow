@@ -1,5 +1,5 @@
-testEventName,true,testExpense,100,01/01/2020,1,0,0,michaelmal
-testEventName2,true,testIncome,100,01/02/2020,1,0,0,testusername
-bill,true,insurance,200,10/10/2020,1,0,0,admin
-bill2,true,groceries,150,01/10/2020,0,10,0,admin
-paycheck,false,job income,300,02/10/2019,1,0,0,admin
+testEventName,true,testExpense,100,2020-01-01,1,0,0,michaelmal
+testEventName2,true,testIncome,100,2020-01-02,1,0,0,testusername
+bill,true,insurance,200,2020-10-10,1,0,0,admin
+bill2,true,groceries,150,2020-01-10,0,10,0,admin
+paycheck,false,job income,300,2019-02-10,1,0,0,admin

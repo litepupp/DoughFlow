@@ -1,5 +1,6 @@
 package application.controller;
 
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,10 +61,17 @@ public class MainController {
 		System.out.println("Refresh Button Pressed");
 		
 		dateSet();
-		
 	}
 	
 	public void setAccordion() {
+		
+	}
+	
+	public void setPie() {
+		
+	}
+	
+	public void setStats() {
 		
 	}
 	
@@ -78,6 +86,13 @@ public class MainController {
 		
 		AddEventController addEventController = addEventLoader.getController();
 		addEventController.initializeUser(currentUser);
+		
+		addEventController.CreateNewEventButton.disableProperty().bind(
+			    Bindings.isEmpty(addEventController.EventNameTextField.textProperty())
+			    .or(Bindings.isEmpty(addEventController.EventAmountTextField.textProperty()))
+			    .or(Bindings.isNull(addEventController.StartingDatePicker.valueProperty()))
+			    .or(Bindings.isNull(addEventController.EventCategoryChoiceBox.valueProperty()))
+			);
 		
 		Stage addEventStage = new Stage();
 		addEventStage.setScene(addEventScene);

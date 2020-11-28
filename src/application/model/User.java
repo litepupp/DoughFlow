@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.Iterator;
 
 import javafx.collections.FXCollections;
@@ -35,7 +36,7 @@ public class User {
                 tempEvent.setIsExpense(Boolean.parseBoolean(data[1]));
                 tempEvent.setCategory(data[2]);
                 tempEvent.setAmount(Integer.parseInt(data[3]));
-                tempEvent.setDateStart(data[4]);
+                tempEvent.setDateStart(LocalDate.parse(data[4]));
                 tempEvent.setMonthsInterval(Integer.parseInt(data[5]));
                 tempEvent.setWeeksInterval(Integer.parseInt(data[6]));
                 tempEvent.setDaysInterval(Integer.parseInt(data[7]));
