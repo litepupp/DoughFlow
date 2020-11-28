@@ -34,6 +34,8 @@ public class MainController {
 	private Button AddEventButton;
 	@FXML
 	private Button DeleteEventButton;
+	@FXML
+	private Button ViewCalendarButton;
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
