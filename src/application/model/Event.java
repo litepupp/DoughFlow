@@ -7,11 +7,10 @@ public class Event {
 	private String EventName;
 	private boolean IsExpense;
 	private String Category;
-	private int Amount;
+	private double Amount;
 	private LocalDate DateStart;
-	private int MonthsInterval;
-	private int WeeksInterval;
-	private int DaysInterval;
+	private int Interval;
+	private String IntervalType;
 	
 	public String toString() {
 		String choiceBoxView = "( " + this.EventName + " / " + this.Category + " )";
@@ -31,9 +30,7 @@ public class Event {
 			  textAreaInfo += "Event Category: " + this.Category + "\n";
 			  textAreaInfo += "Amount:         " + this.Amount + "\n";
 			  textAreaInfo += "Starting Date:  " + this.DateStart + "\n";
-			  textAreaInfo += "Every " + this.MonthsInterval + " month(s)\n";
-			  textAreaInfo += "Every " + this.WeeksInterval + "  week(s)\n";
-			  textAreaInfo += "Every " + this.DaysInterval + "   day(s)\n";
+			  textAreaInfo += "Every           " + this.Interval + " " + this.IntervalType + "(s)\n";
 		
 		return textAreaInfo;
 	}
@@ -62,11 +59,11 @@ public class Event {
 		this.Category = category;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return this.Amount;
 	}
 	
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.Amount = amount;
 	}
 
@@ -78,30 +75,22 @@ public class Event {
 		this.DateStart = dateStart;
 	}
 
-	public int getMonthsInterval() {
-		return this.MonthsInterval;
+	public int getInterval() {
+		return this.Interval;
 	}
 	
-	public void setMonthsInterval(int monthsInterval) {
-		this.MonthsInterval = monthsInterval;
+	public void setInterval(int interval) {
+		this.Interval = interval;
 	}
 
-	public int getWeeksInterval() {
-		return WeeksInterval;
+	public String getIntervalType() {
+		return this.IntervalType;
 	}
 
-	public void setWeeksInterval(int weeksInterval) {
-		WeeksInterval = weeksInterval;
+	public void setIntervalType(String intervalType) {
+		this.IntervalType = intervalType;
 	}
 
-	public int getDaysInterval() {
-		return this.DaysInterval;
-	}
-	
-	public void setDaysInterval(int daysInterval) {
-		this.DaysInterval = daysInterval;
-	}
-	
 	Event() {
 
 	}

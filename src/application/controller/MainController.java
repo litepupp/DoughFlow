@@ -92,7 +92,7 @@ public class MainController {
 			    .or(Bindings.isEmpty(addEventController.EventAmountTextField.textProperty()))
 			    .or(Bindings.isNull(addEventController.StartingDatePicker.valueProperty()))
 			    .or(Bindings.isNull(addEventController.EventCategoryChoiceBox.valueProperty()))
-			    .or(Bindings.isEmpty(addEventController.EventTimeIntervalTextField.textProperty()))
+			    .or(Bindings.isEmpty(addEventController.TimeIntervalTextField.textProperty()))
 			);
 		
 		addEventController.AddEventCategoryButton.disableProperty().bind(

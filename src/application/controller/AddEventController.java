@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import application.Main;
 import application.model.User;
@@ -28,6 +29,14 @@ public class AddEventController {
 	
 	public static User currentUser;
 	
+	String eventName;
+	String selectedCategory;
+	boolean isExpense;
+	double eventAmount;
+	LocalDate dateStart;
+	int interval;
+	String intervalType;
+	
 	@FXML
 	private Label StatusLabel;
 	@FXML
@@ -51,7 +60,7 @@ public class AddEventController {
 	@FXML
 	public DatePicker StartingDatePicker;
 	@FXML
-	public TextField EventTimeIntervalTextField;
+	public TextField TimeIntervalTextField;
 	@FXML
 	private RadioButton EveryMonthRadioButton;
 	@FXML
@@ -74,15 +83,11 @@ public class AddEventController {
 		ToggleGroup ExpenseGroup = new ToggleGroup();
 		
 		ExpenseRadioButton.setToggleGroup(ExpenseGroup);
-		ExpenseRadioButton.setSelected(true);
-		
 		IncomeRadioButton.setToggleGroup(ExpenseGroup);
 		
 		ToggleGroup IntervalGroup = new ToggleGroup();
 		
 		EveryMonthRadioButton.setToggleGroup(IntervalGroup);
-		EveryMonthRadioButton.setSelected(true);
-		
 		EveryWeekRadioButton.setToggleGroup(IntervalGroup);
 		EveryDayRadioButton.setToggleGroup(IntervalGroup);
 	}
@@ -110,6 +115,44 @@ public class AddEventController {
 		
 		currentUser.addEventCategory(newEventCat);
 		StatusLabel.setText("Status: New Category Added!");
+	}
+	
+	public void dateSelected(ActionEvent event) throws IOException{
+		dateStart = StartingDatePicker.getValue();
+		System.out.println(StartingDatePicker.getValue());
+	}
+	
+	public void expenseSelected(ActionEvent event) throws IOException {
+		isExpense = true;
+	}
+	
+	public void incomeSelected(ActionEvent event) throws IOException {
+		isExpense = false;
+	}
+	
+	public void monthSelected(ActionEvent event) throws IOException {
+		intervalType = "Month";
+	}
+	
+	public void weekSelected(ActionEvent event) throws IOException {
+		intervalType = "Week";
+	}
+	
+	public void daySelected(ActionEvent event) throws IOException {
+		intervalType = "Day";
+	}
+	
+	public void addEvent(ActionEvent event) throws IOException {
+		
+		eventName = EventNameTextField.getText();
+		selectedCategory = EventCategoryChoiceBox.getSelectionModel().getSelectedItem();
+		eventAmount = Double.parseDouble(EventNameTextField.getText());
+		interval = Integer.parseInt(TimeIntervalTextField.getText());
+		
+		currentUser.createNewEvent(eventName, selectedCategory, isExpense, eventAmount, dateStart, interval, intervalType);
+		currentUser.updateEventCategories();
+		
+		StatusLabel.setText("Status: New Event Added!");
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {

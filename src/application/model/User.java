@@ -35,14 +35,12 @@ public class User {
                 tempEvent.setEventName(data[0]);
                 tempEvent.setIsExpense(Boolean.parseBoolean(data[1]));
                 tempEvent.setCategory(data[2]);
-                tempEvent.setAmount(Integer.parseInt(data[3]));
+                tempEvent.setAmount(Double.parseDouble(data[3]));
                 tempEvent.setDateStart(LocalDate.parse(data[4]));
-                tempEvent.setMonthsInterval(Integer.parseInt(data[5]));
-                tempEvent.setWeeksInterval(Integer.parseInt(data[6]));
-                tempEvent.setDaysInterval(Integer.parseInt(data[7]));
+                tempEvent.setInterval(Integer.parseInt(data[5]));
+                tempEvent.setIntervalType(data[6]);
                 
-                
-                if (this.Username.equals(data[8])) {
+                if (this.Username.equals(data[7])) {
                 	System.out.println(tempEvent.getEventName() + " added to: " + this.Username);
                 	Events.add(tempEvent);
                 }
@@ -53,6 +51,19 @@ public class User {
 		} catch (IOException IOe) {
 			IOe.printStackTrace();
         }
+	}
+	
+	public void createNewEvent(String eventName, String selectedCategory, boolean isExpense, double eventAmount, LocalDate dateStart, int interval, String intervalType) {
+		Event tempEvent = new Event();
+		tempEvent.setEventName(eventName);
+		tempEvent.setCategory(selectedCategory);
+		tempEvent.setIsExpense(isExpense);
+		tempEvent.setAmount(eventAmount);
+		tempEvent.setDateStart(dateStart);
+		tempEvent.setInterval(interval);
+		tempEvent.setIntervalType(intervalType);
+		
+		this.Events.add(tempEvent);
 	}
 	
 	public void updateEventCategories() {
