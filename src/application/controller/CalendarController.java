@@ -24,6 +24,11 @@ public class CalendarController {
 	@FXML
 	private Button ReturnHomeButton;
 	
+	public void initializeUser(User user) {
+		currentUser = user;
+		
+	}
+	
 	public void returnHome(ActionEvent event) throws IOException {
 		Stage deleteEventStage = (Stage)ReturnHomeButton.getScene().getWindow();
 		deleteEventStage.close();

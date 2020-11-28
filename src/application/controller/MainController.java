@@ -99,6 +99,23 @@ public class MainController {
 		deleteEventStage.show();
 	}
 	
+	public void Calendar(ActionEvent event) throws IOException {
+		System.out.println("View Calendar Pressed");
+		
+		FXMLLoader calendarLoader = new FXMLLoader();
+		calendarLoader.setLocation(Main.class.getResource("controller/CalendarView.fxml"));
+		
+		Parent calendarRoot = calendarLoader.load();
+		Scene calendarScene = new Scene(calendarRoot);
+		
+		CalendarController calendarController = calendarLoader.getController();
+		calendarController.initializeUser(currentUser);
+		
+		Stage calendarStage = new Stage();
+		calendarStage.setScene(calendarScene);
+		calendarStage.show();
+	}
+	
 	public void dateSet() {
 		LocalDate date = LocalDate.now();
         int month = date.getMonthValue();

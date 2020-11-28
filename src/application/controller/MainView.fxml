@@ -44,7 +44,8 @@
                 </TitledPane>
               </panes>
             </Accordion>
-            <PieChart layoutX="204.0" layoutY="125.0" prefHeight="305.0" prefWidth="379.0" title="Expenses" />
+            <PieChart layoutX="204.0" layoutY="125.0" prefHeight="306.0" prefWidth="379.0" title="Expenses" />
+            <Button layoutX="20.0" layoutY="169.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="96.0" text="View Calendar" textAlignment="CENTER" wrapText="true" />
          </children>
       </AnchorPane>
    </center>

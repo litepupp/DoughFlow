@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CalendarController">
    <center>
       <GridPane gridLinesVisible="true" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -29,7 +28,7 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Button layoutX="31.0" layoutY="17.0" mnemonicParsing="false" text="Return to Home">
+            <Button fx:id="ReturnHomeButton" layoutX="31.0" layoutY="17.0" mnemonicParsing="false" onAction="#returnHome" text="Return to Home">
                <font>
                   <Font size="15.0" />
                </font>
