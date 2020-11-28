@@ -92,6 +92,11 @@ public class MainController {
 			    .or(Bindings.isEmpty(addEventController.EventAmountTextField.textProperty()))
 			    .or(Bindings.isNull(addEventController.StartingDatePicker.valueProperty()))
 			    .or(Bindings.isNull(addEventController.EventCategoryChoiceBox.valueProperty()))
+			    .or(Bindings.isEmpty(addEventController.EventTimeIntervalTextField.textProperty()))
+			);
+		
+		addEventController.AddEventCategoryButton.disableProperty().bind(
+			    Bindings.isEmpty(addEventController.NewEventCategoryTextField.textProperty())
 			);
 		
 		Stage addEventStage = new Stage();

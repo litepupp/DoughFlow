@@ -33,7 +33,7 @@ public class AddEventController {
 	@FXML
 	public Button CreateNewEventButton;
 	@FXML
-	private Button AddEventCategoryButton;
+	public Button AddEventCategoryButton;
 	@FXML
 	private Button ReturnHomeButton;
 	@FXML
@@ -45,13 +45,13 @@ public class AddEventController {
 	@FXML
 	public TextField EventNameTextField;
 	@FXML
-	private TextField NewEventCategoryTextField;
+	public TextField NewEventCategoryTextField;
 	@FXML
 	public TextField EventAmountTextField;
 	@FXML
 	public DatePicker StartingDatePicker;
 	@FXML
-	private TextField EventTimeIntervalTextField;
+	public TextField EventTimeIntervalTextField;
 	@FXML
 	private RadioButton EveryMonthRadioButton;
 	@FXML
@@ -60,6 +60,7 @@ public class AddEventController {
 	private RadioButton EveryDayRadioButton;
 
 	public void initializeUser(User user) {
+		
 		currentUser = user;
 		
 		EventCategoryChoiceBox.setItems(convertSetToList(currentUser.getEventCategories()));
@@ -69,6 +70,7 @@ public class AddEventController {
 	}
 	
 	public void setToggleGroups() {
+		
 		ToggleGroup ExpenseGroup = new ToggleGroup();
 		
 		ExpenseRadioButton.setToggleGroup(ExpenseGroup);
@@ -82,27 +84,33 @@ public class AddEventController {
 		EveryMonthRadioButton.setSelected(true);
 		
 		EveryWeekRadioButton.setToggleGroup(IntervalGroup);
-		
 		EveryDayRadioButton.setToggleGroup(IntervalGroup);
 	}
 	
 	private ObservableList<String> convertSetToList(ObservableSet<String> set) {
-	        ObservableList<String> list = FXCollections.observableArrayList(set);
+	       
+		ObservableList<String> list = FXCollections.observableArrayList(set);
 
-	        set.addListener((SetChangeListener<String>) change -> {
-	            if (change.wasAdded()) {
-	                String added = change.getElementAdded();
-	                list.add(added);
-	            } else {
-	                String removed = change.getElementRemoved();
-	                list.remove(removed);
-	            }
-	        });
+		set.addListener((SetChangeListener<String>) change -> {
+			if (change.wasAdded()) {
+				String added = change.getElementAdded();
+				list.add(added);
+			} else {
+				String removed = change.getElementRemoved();
+				list.remove(removed);
+			}
+		});
 
-	        return list;
+		return list;
+	}
+	
+	public void addEventCategory(ActionEvent event) throws IOException {
+		
+		
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {
+		
 		Stage deleteEventStage = (Stage)ReturnHomeButton.getScene().getWindow();
 		deleteEventStage.close();
 	    
