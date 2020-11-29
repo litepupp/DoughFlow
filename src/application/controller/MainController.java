@@ -66,7 +66,7 @@ public class MainController {
 	}
 	
 	public void setPie() {
-		
+		//test
 	}
 	
 	public void setStats() {
