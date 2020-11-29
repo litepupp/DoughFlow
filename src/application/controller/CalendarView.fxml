@@ -27,6 +27,8 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
+         	<fx:define>
+         	<ArrayList fx:id="ButtonList">
             <Button fx:id="DayButton1" alignment="TOP_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="1" textAlignment="RIGHT">
                <font>
                   <Font size="24.0" />
@@ -202,6 +204,8 @@
                   <Font size="24.0" />
                </font>
             </Button>
+            </ArrayList>
+            </fx:define>
          </children>
       </GridPane>
    </center>
@@ -220,6 +224,41 @@
             </Button>
             <Button layoutX="495.0" layoutY="18.0" mnemonicParsing="false" text="Next Month" />
             <Button layoutX="218.0" layoutY="18.0" mnemonicParsing="false" text="Prev Month" />
+            <fx:reference source="DayButton1"/>
+            <fx:reference source="DayButton2"/>
+            <fx:reference source="DayButton3"/>
+            <fx:reference source="DayButton4"/>
+            <fx:reference source="DayButton5"/>
+            <fx:reference source="DayButton6"/>
+            <fx:reference source="DayButton7"/>
+            <fx:reference source="DayButton8"/>
+            <fx:reference source="DayButton9"/>
+            <fx:reference source="DayButton10"/>
+            <fx:reference source="DayButton11"/>
+            <fx:reference source="DayButton12"/>
+            <fx:reference source="DayButton13"/>
+            <fx:reference source="DayButton14"/>
+            <fx:reference source="DayButton15"/>
+            <fx:reference source="DayButton16"/>
+            <fx:reference source="DayButton17"/>
+            <fx:reference source="DayButton18"/>
+            <fx:reference source="DayButton19"/>
+            <fx:reference source="DayButton20"/>
+            <fx:reference source="DayButton21"/>
+            <fx:reference source="DayButton22"/>
+            <fx:reference source="DayButton23"/>
+            <fx:reference source="DayButton24"/>
+            <fx:reference source="DayButton25"/>
+            <fx:reference source="DayButton26"/>
+            <fx:reference source="DayButton27"/>
+            <fx:reference source="DayButton28"/>
+            <fx:reference source="DayButton29"/>
+            <fx:reference source="DayButton30"/>
+            <fx:reference source="DayButton31"/>
+            <fx:reference source="DayButton32"/>
+            <fx:reference source="DayButton33"/>
+            <fx:reference source="DayButton34"/>
+            <fx:reference source="DayButton35"/>
          </children>
       </AnchorPane>
    </top>
