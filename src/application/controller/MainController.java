@@ -98,9 +98,9 @@ public class MainController {
 			);
 		
 		//This causes the return button to consistently create new home pages
-				//Stage addEventStage = new Stage();
+		Stage addEventStage = new Stage();
 		//This Stage declaration fixes that
-		Stage addEventStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		//Stage addEventStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 		addEventStage.setScene(addEventScene);
 		addEventStage.show();
 	}
@@ -117,9 +117,9 @@ public class MainController {
 		DeleteEventController deleteEventController = deleteEventLoader.getController();
 		deleteEventController.initializeUser(currentUser);
 		
-		//Stage deleteEventStage = new Stage();
+		Stage deleteEventStage = new Stage();
 		//Same as above with AddNewEvent()
-		Stage deleteEventStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		//Stage deleteEventStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		deleteEventStage.setScene(deleteEventScene);
 		deleteEventStage.show();
 	}
