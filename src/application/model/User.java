@@ -91,9 +91,10 @@ public class User {
 	}
 	
 	public void removeEventCategory(String name) {
-		for (String i : this.EventCategories) {
-			if (i.equals(name)) {
-				this.EventCategories.remove(name);
+		for (Iterator<String> it = this.EventCategories.iterator(); it.hasNext();) {
+			String currentCat = it.next();
+			if (currentCat.equals(name)) {
+				it.remove();
 			}
 		}
 	}
