@@ -1,5 +1,8 @@
 package application.controller;
 
+import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.chart.PieChart;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -34,41 +38,112 @@ public class MainController {
 	private Button AddEventButton;
 	@FXML
 	private Button DeleteEventButton;
+	@FXML
+	private Button ViewCalendarButton;
+	@FXML
+	private PieChart PieChart;
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
 		currentUser = user;
+		currentUser.updateEventCategories();
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
-		
-		currentUser.printEventCategories();
+		setPie();
+		setAccordion();
+		setStats();
 	}
 	
 	public void initializeUser(User user) throws IOException {
 		currentUser = user;
+		currentUser.updateEventCategories();
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
-		
-		currentUser.printEventCategories();
+		setPie();
+		setAccordion();
+		setStats();
 	}
 	
 	public void refreshPage(ActionEvent actionEvent) {
 		System.out.println("Refresh Button Pressed");
+		currentUser.updateEventCategories();
 		
 		dateSet();
-		
+		setPie();
+		setAccordion();
+		setStats();
 	}
 	
 	public void setAccordion() {
 		
 	}
 	
-	public void AddNewEvent(ActionEvent actionEvent) {
+	public void setPie() {
+		 
+		ObservableList<PieChart.Data> pieChartData =FXCollections.observableArrayList();
+		
+		for (String i : currentUser.getEventCategories()) {
+			
+			for (Event j : currentUser.getEvents()) {
+				
+				if (i.equals(j.getCategory())) {
+					
+					if (j.getIsExpense() == true) {
+						pieChartData.add(new PieChart.Data(j.getEventName(), j.getAmount()));
+					}
+				}
+			}
+		}
+		
+		PieChart.setData(pieChartData);
+		PieChart.setTitle("Expenses");
+		
+		pieChartData.forEach(data ->
+        data.nameProperty().bind(
+                Bindings.concat(
+                        data.getName(), ": $", data.pieValueProperty()
+                )
+        )
+);
+		
+	}
+	
+	public void setStats() {
+		
+	}
+	
+	public void AddNewEvent(ActionEvent actionEvent) throws IOException {
 		System.out.println("Add New Event Pressed");
 		
+		FXMLLoader addEventLoader = new FXMLLoader();
+		addEventLoader.setLocation(Main.class.getResource("controller/AddEventView.fxml"));
 		
+		Parent addEventRoot = addEventLoader.load();
+		Scene addEventScene = new Scene(addEventRoot);
+		
+		AddEventController addEventController = addEventLoader.getController();
+		addEventController.initializeUser(currentUser);
+		
+		addEventController.CreateNewEventButton.disableProperty().bind(
+			    Bindings.isEmpty(addEventController.EventNameTextField.textProperty())
+			    .or(Bindings.isEmpty(addEventController.EventAmountTextField.textProperty()))
+			    .or(Bindings.isNull(addEventController.StartingDatePicker.valueProperty()))
+			    .or(Bindings.isNull(addEventController.EventCategoryChoiceBox.valueProperty()))
+			    .or(Bindings.isEmpty(addEventController.TimeIntervalTextField.textProperty()))
+			);
+		
+		addEventController.AddEventCategoryButton.disableProperty().bind(
+			    Bindings.isEmpty(addEventController.NewEventCategoryTextField.textProperty())
+			);
+		
+		//This causes the return button to consistently create new home pages
+		Stage addEventStage = new Stage();
+		//This Stage declaration fixes that
+		//Stage addEventStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		addEventStage.setScene(addEventScene);
+		addEventStage.show();
 	}
 	
 	public void DeleteEvent(ActionEvent event) throws IOException {
@@ -84,8 +159,29 @@ public class MainController {
 		deleteEventController.initializeUser(currentUser);
 		
 		Stage deleteEventStage = new Stage();
+		//Same as above with AddNewEvent()
+		//Stage deleteEventStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		deleteEventStage.setScene(deleteEventScene);
 		deleteEventStage.show();
+	}
+	
+	public void Calendar(ActionEvent event) throws IOException {
+		System.out.println("View Calendar Pressed");
+		
+		FXMLLoader calendarLoader = new FXMLLoader();
+		calendarLoader.setLocation(Main.class.getResource("controller/CalendarView.fxml"));
+		
+		Parent calendarRoot = calendarLoader.load();
+		Scene calendarScene = new Scene(calendarRoot);
+		
+		CalendarController calendarController = calendarLoader.getController();
+		calendarController.initializeUser(currentUser);
+		
+		//Stage calendarStage = new Stage();
+		//Same as above with AddNewEvent() and DeleteEvent()
+		Stage calendarStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		calendarStage.setScene(calendarScene);
+		calendarStage.show();
 	}
 	
 	public void dateSet() {
@@ -112,6 +208,19 @@ public class MainController {
 		
 		Parent loginRoot = loginLoader.load();
 		Scene loginScene = new Scene(loginRoot);
+		
+		LoginController loginController = loginLoader.getController();
+		
+		loginController.RegisterButton.disableProperty().bind(
+			    Bindings.isEmpty(loginController.NameField.textProperty())
+			    .or(Bindings.isEmpty(loginController.UsernameField.textProperty()))
+			    .or(Bindings.isEmpty(loginController.PasswordField.textProperty()))
+			);
+		
+		loginController.LoginButton.disableProperty().bind(
+			    Bindings.isEmpty(loginController.UsernameField.textProperty())
+			    .or(Bindings.isEmpty(loginController.PasswordField.textProperty()))
+			);
 		
 		Stage loginStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		loginStage.setScene(loginScene);

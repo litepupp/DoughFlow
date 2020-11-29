@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.Iterator;
 
 import javafx.collections.FXCollections;
@@ -32,16 +33,14 @@ public class User {
                 
                 Event tempEvent = new Event();
                 tempEvent.setEventName(data[0]);
-                tempEvent.setType(data[1]);
+                tempEvent.setIsExpense(Boolean.parseBoolean(data[1]));
                 tempEvent.setCategory(data[2]);
-                tempEvent.setAmount(Integer.parseInt(data[3]));
-                tempEvent.setDateStart(data[4]);
-                tempEvent.setMonthsInterval(Integer.parseInt(data[5]));
-                tempEvent.setWeeksInterval(Integer.parseInt(data[6]));
-                tempEvent.setDaysInterval(Integer.parseInt(data[7]));
+                tempEvent.setAmount(Double.parseDouble(data[3]));
+                tempEvent.setDateStart(LocalDate.parse(data[4]));
+                tempEvent.setInterval(Integer.parseInt(data[5]));
+                tempEvent.setIntervalType(data[6]);
                 
-                
-                if (this.Username.equals(data[8])) {
+                if (this.Username.equals(data[7])) {
                 	System.out.println(tempEvent.getEventName() + " added to: " + this.Username);
                 	Events.add(tempEvent);
                 }
@@ -52,6 +51,19 @@ public class User {
 		} catch (IOException IOe) {
 			IOe.printStackTrace();
         }
+	}
+	
+	public void createNewEvent(String eventName, String selectedCategory, boolean isExpense, double eventAmount, LocalDate dateStart, int interval, String intervalType) {
+		Event tempEvent = new Event();
+		tempEvent.setEventName(eventName);
+		tempEvent.setCategory(selectedCategory);
+		tempEvent.setIsExpense(isExpense);
+		tempEvent.setAmount(eventAmount);
+		tempEvent.setDateStart(dateStart);
+		tempEvent.setInterval(interval);
+		tempEvent.setIntervalType(intervalType);
+		
+		this.Events.add(tempEvent);
 	}
 	
 	public void updateEventCategories() {
@@ -79,10 +91,10 @@ public class User {
 	}
 	
 	public void removeEventCategory(String name) {
-		for (String i : this.EventCategories) {
-			if (i.equals(name)) {
-				this.EventCategories.remove(name);
-				System.out.println(name + " Cat REMOVED");
+		for (Iterator<String> it = this.EventCategories.iterator(); it.hasNext();) {
+			String currentCat = it.next();
+			if (currentCat.equals(name)) {
+				it.remove();
 			}
 		}
 	}
@@ -91,6 +103,11 @@ public class User {
 		for (String j : this.EventCategories) {
 			System.out.println("EventCAT: " + j);
 		}
+	}
+	
+	public void addEventCategory(String newEventCat) {
+		this.EventCategories.add(newEventCat);
+		
 	}
 	
 	public String getName() {
@@ -119,6 +136,10 @@ public class User {
 	
 	public ObservableList<Event> getEvents() {
 		return this.Events;
+	}
+	
+	public ObservableSet<String> getEventCategories() {
+		return this.EventCategories;
 	}
 
 	User() {

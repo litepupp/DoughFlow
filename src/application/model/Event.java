@@ -1,15 +1,16 @@
 package application.model;
 
+import java.time.LocalDate;
+
 public class Event {
 	
 	private String EventName;
-	private String Type;
+	private boolean IsExpense;
 	private String Category;
-	private int Amount;
-	private String DateStart;
-	private int MonthsInterval;
-	private int WeeksInterval;
-	private int DaysInterval;
+	private double Amount;
+	private LocalDate DateStart;
+	private int Interval;
+	private String IntervalType;
 	
 	public String toString() {
 		String choiceBoxView = "( " + this.EventName + " / " + this.Category + " )";
@@ -18,13 +19,18 @@ public class Event {
 	
 	public String getFullInfo() {
 		String textAreaInfo = "Event Name:     " + this.EventName + "\n";
-			  textAreaInfo += "Event Type:     " + this.Type + "\n";
+		
+		if (this.IsExpense == true) {
+			  textAreaInfo += "Event Type:     Expense\n";
+		}
+		else {
+			  textAreaInfo += "Event Type:     Income\n";
+		}
+			
 			  textAreaInfo += "Event Category: " + this.Category + "\n";
-			  textAreaInfo += "Amount:         " + this.Amount + "\n";
+			  textAreaInfo += "Amount:        $" + this.Amount + "\n";
 			  textAreaInfo += "Starting Date:  " + this.DateStart + "\n";
-			  textAreaInfo += "Every " + this.MonthsInterval + " month(s)\n";
-			  textAreaInfo += "Every " + this.WeeksInterval + "  week(s)\n";
-			  textAreaInfo += "Every " + this.DaysInterval + "   day(s)\n";
+			  textAreaInfo += "Every           " + this.Interval + " " + this.IntervalType + "(s)\n";
 		
 		return textAreaInfo;
 	}
@@ -37,12 +43,12 @@ public class Event {
 		this.EventName = eventName;
 	}
 	
-	public String getType() {
-		return this.Type;
+	public boolean getIsExpense() {
+		return this.IsExpense;
 	}
 	
-	public void setType(String type) {
-		this.Type = type;
+	public void setIsExpense(boolean isExpense) {
+		this.IsExpense = isExpense;
 	}
 	
 	public String getCategory() {
@@ -53,46 +59,38 @@ public class Event {
 		this.Category = category;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return this.Amount;
 	}
 	
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.Amount = amount;
 	}
 
-	public String getDateStart() {
+	public LocalDate getDateStart() {
 		return this.DateStart;
 	}
 	
-	public void setDateStart(String dateStart) {
+	public void setDateStart(LocalDate dateStart) {
 		this.DateStart = dateStart;
 	}
 
-	public int getMonthsInterval() {
-		return this.MonthsInterval;
+	public int getInterval() {
+		return this.Interval;
 	}
 	
-	public void setMonthsInterval(int monthsInterval) {
-		this.MonthsInterval = monthsInterval;
+	public void setInterval(int interval) {
+		this.Interval = interval;
 	}
 
-	public int getWeeksInterval() {
-		return WeeksInterval;
+	public String getIntervalType() {
+		return this.IntervalType;
 	}
 
-	public void setWeeksInterval(int weeksInterval) {
-		WeeksInterval = weeksInterval;
+	public void setIntervalType(String intervalType) {
+		this.IntervalType = intervalType;
 	}
 
-	public int getDaysInterval() {
-		return this.DaysInterval;
-	}
-	
-	public void setDaysInterval(int daysInterval) {
-		this.DaysInterval = daysInterval;
-	}
-	
 	Event() {
 
 	}
