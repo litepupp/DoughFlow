@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
+   <children>
+      <AnchorPane layoutX="388.0" layoutY="64.0" prefHeight="470.0" prefWidth="362.0" style="-fx-background-color: #77a6f7;">
          <children>
-            <TextField fx:id="UsernameField" layoutX="317.0" layoutY="253.0" promptText="Enter Username" />
-            <PasswordField fx:id="PasswordField" layoutX="317.0" layoutY="304.0" promptText="Enter Password" />
-            <Button fx:id="LoginButton" layoutX="288.0" layoutY="373.0" mnemonicParsing="false" onAction="#LoginPress" text="Login" />
-            <Button fx:id="RegisterButton" layoutX="451.0" layoutY="374.0" mnemonicParsing="false" onAction="#RegisterPress" text="Register" />
-            <Label fx:id="ErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="416.0" prefHeight="62.0" prefWidth="440.0" text="Welcome to Doughflow!" textAlignment="CENTER" wrapText="true" />
-            <TextField fx:id="NameField" layoutX="317.0" layoutY="207.0" promptText="Name (Registering)" />
+            <JFXTextField fx:id="UsernameField" focusColor="#ffccbc" layoutX="45.0" layoutY="131.0" prefWidth="274.0" promptText="username" unFocusColor="WHITE" />
+            <JFXPasswordField fx:id="PasswordField" focusColor="#ffccbc" layoutX="45.0" layoutY="193.0" prefWidth="274.0" promptText="password" unFocusColor="WHITE" />
+            <JFXButton fx:id="RegisterButton" layoutX="45.0" layoutY="287.0" onAction="#RegisterPress" prefHeight="57.0" prefWidth="274.0" style="-fx-background-color: #00887a;" text="Register" textFill="WHITE" />
+            <JFXButton fx:id="LoginButton" layoutX="45.0" layoutY="369.0" onAction="#LoginPress" prefHeight="57.0" prefWidth="274.0" style="-fx-background-color: #d3e3fc;" text="Login" />
+            <JFXTextField fx:id="NameField" focusColor="#ffccbc" layoutX="45.0" layoutY="69.0" prefWidth="274.0" promptText="name (if registering)" unFocusColor="WHITE" />
          </children>
       </AnchorPane>
-   </center>
-</BorderPane>
+      <Label layoutX="40.0" layoutY="130.0" prefHeight="114.0" prefWidth="294.0" text="TAKE CONTROL OF YOUR FINANCES." textAlignment="CENTER" textFill="#00887a" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="221.0" prefHeight="130.0" prefWidth="305.0" text="Budgeting and expense-tracking made easy." wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="70.0" text="DOUGHFLOW">
+         <font>
+            <Font name="Arial Black" size="41.0" />
+         </font>
+      </Label>
+      <Label fx:id="ErrorLabel" layoutX="536.0" layoutY="545.0" />
+      <ImageView fitHeight="202.0" fitWidth="294.0" layoutX="42.0" layoutY="327.0">
+         <image>
+            <Image url="@../../../../../../OneDrive/Desktop/loginimage4.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
