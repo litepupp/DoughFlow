@@ -1,6 +1,8 @@
 package application.controller;
 
 import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.chart.PieChart;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -37,28 +40,40 @@ public class MainController {
 	private Button DeleteEventButton;
 	@FXML
 	private Button ViewCalendarButton;
+	@FXML
+	private PieChart PieChart;
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
 		currentUser = user;
+		currentUser.updateEventCategories();
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
-		
+		setPie();
+		setAccordion();
+		setStats();
 	}
 	
 	public void initializeUser(User user) throws IOException {
 		currentUser = user;
+		currentUser.updateEventCategories();
 		
 		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
 		dateSet();
-		
+		setPie();
+		setAccordion();
+		setStats();
 	}
 	
 	public void refreshPage(ActionEvent actionEvent) {
 		System.out.println("Refresh Button Pressed");
+		currentUser.updateEventCategories();
 		
 		dateSet();
+		setPie();
+		setAccordion();
+		setStats();
 	}
 	
 	public void setAccordion() {
@@ -66,7 +81,25 @@ public class MainController {
 	}
 	
 	public void setPie() {
-		//test
+		 
+		ObservableList<PieChart.Data> pieChartData =FXCollections.observableArrayList();
+		
+		for (String i : currentUser.getEventCategories()) {
+			
+			for (Event j : currentUser.getEvents()) {
+				
+				if (i.equals(j.getCategory())) {
+					
+					if (j.getIsExpense() == true) {
+						pieChartData.add(new PieChart.Data(j.getEventName(), j.getAmount()));
+					}
+				}
+			}
+		}
+		
+		PieChart = new PieChart(pieChartData);
+		PieChart.setTitle("Expenses");
+		
 	}
 	
 	public void setStats() {
