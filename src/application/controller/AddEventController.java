@@ -3,7 +3,6 @@ package application.controller;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import application.Main;
 import application.model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,10 +10,6 @@ import javafx.collections.ObservableSet;
 import javafx.collections.SetChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -159,7 +154,7 @@ public class AddEventController {
 		
 		Stage deleteEventStage = (Stage)ReturnHomeButton.getScene().getWindow();
 		deleteEventStage.close();
-	    
+	    /*
 		FXMLLoader mainLoader = new FXMLLoader();
 		mainLoader.setLocation(Main.class.getResource("controller/MainView.fxml"));
 		
@@ -172,5 +167,6 @@ public class AddEventController {
 		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		mainStage.setScene(mainScene);
 		mainStage.show();
+		*/
 	}
 }
