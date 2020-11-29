@@ -46,7 +46,7 @@ public class CalendarController {
 	}
 	
 	public void initializeAll(User user) {
-		LocalDate date = LocalDate.now();
+	/*	LocalDate date = LocalDate.now();
 		int currentDay = date.getDayOfMonth();
 		//DayOfWeek dayOfWeek = date.getDayOfWeek();
 		
@@ -67,7 +67,7 @@ public class CalendarController {
 			}
 			if(monthCount==2)
 				count = count - 28;
-		}
+		}	*/
 	}
 	
 	public void viewDay(ActionEvent event) throws IOException{
