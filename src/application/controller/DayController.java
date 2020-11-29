@@ -21,7 +21,6 @@ public class DayController {
 	private Label dateLabel;
 	
 	
-	
 	public void initializeUser(User user) {
 		currentUser = user;
 		initializeAll(currentUser);

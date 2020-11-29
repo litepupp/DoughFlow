@@ -97,8 +97,16 @@ public class MainController {
 			}
 		}
 		
-		PieChart = new PieChart(pieChartData);
+		PieChart.setData(pieChartData);
 		PieChart.setTitle("Expenses");
+		
+		pieChartData.forEach(data ->
+        data.nameProperty().bind(
+                Bindings.concat(
+                        data.getName(), ": $", data.pieValueProperty()
+                )
+        )
+);
 		
 	}
 	
@@ -200,6 +208,19 @@ public class MainController {
 		
 		Parent loginRoot = loginLoader.load();
 		Scene loginScene = new Scene(loginRoot);
+		
+		LoginController loginController = loginLoader.getController();
+		
+		loginController.RegisterButton.disableProperty().bind(
+			    Bindings.isEmpty(loginController.NameField.textProperty())
+			    .or(Bindings.isEmpty(loginController.UsernameField.textProperty()))
+			    .or(Bindings.isEmpty(loginController.PasswordField.textProperty()))
+			);
+		
+		loginController.LoginButton.disableProperty().bind(
+			    Bindings.isEmpty(loginController.UsernameField.textProperty())
+			    .or(Bindings.isEmpty(loginController.PasswordField.textProperty()))
+			);
 		
 		Stage loginStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		loginStage.setScene(loginScene);

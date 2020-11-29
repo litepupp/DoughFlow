@@ -28,7 +28,7 @@ public class Event {
 		}
 			
 			  textAreaInfo += "Event Category: " + this.Category + "\n";
-			  textAreaInfo += "Amount:         " + this.Amount + "\n";
+			  textAreaInfo += "Amount:        $" + this.Amount + "\n";
 			  textAreaInfo += "Starting Date:  " + this.DateStart + "\n";
 			  textAreaInfo += "Every           " + this.Interval + " " + this.IntervalType + "(s)\n";
 		
