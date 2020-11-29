@@ -13,7 +13,7 @@ public class Event {
 	private String IntervalType;
 	
 	public String toString() {
-		String choiceBoxView = "( " + this.EventName + " / " + this.Category + " )";
+		String choiceBoxView = "Name: " + this.EventName + " Category: " + this.Category;
 		return choiceBoxView;
 	}
 	
@@ -28,7 +28,7 @@ public class Event {
 		}
 			
 			  textAreaInfo += "Event Category: " + this.Category + "\n";
-			  textAreaInfo += "Amount:        $" + this.Amount + "\n";
+			  textAreaInfo += "Amount:         $" + this.Amount + "\n";
 			  textAreaInfo += "Starting Date:  " + this.DateStart + "\n";
 			  textAreaInfo += "Every           " + this.Interval + " " + this.IntervalType + "(s)\n";
 		

@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.chart.PieChart;
 
 import java.io.IOException;
@@ -42,6 +43,8 @@ public class MainController {
 	private Button ViewCalendarButton;
 	@FXML
 	private PieChart PieChart;
+	@FXML
+	private TextArea StatsTextArea;
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
@@ -104,14 +107,20 @@ public class MainController {
         data.nameProperty().bind(
                 Bindings.concat(
                         data.getName(), ": $", data.pieValueProperty()
-                )
-        )
-);
+                )));
 		
 	}
 	
 	public void setStats() {
+		String stats = "Total Events:   " + currentUser.getEventCategories().size() + "\n";
+		      stats += "Num Expenses:   " + currentUser.getNumExpense() + "\n";
+		      stats += "Num Incomes:    " + currentUser.getNumIncome() + "\n";
+		      stats += "--------------------------------\n";
+		      stats += "Total Income:   " + currentUser.getTotalIncome() + "\n";
+		      stats += "Total Expenses: " + currentUser.getTotalExpense() + "\n";
+		      stats += "Total BALANCE:  " + currentUser.getBalance() + "\n";
 		
+		StatsTextArea.setText(stats);
 	}
 	
 	public void AddNewEvent(ActionEvent actionEvent) throws IOException {

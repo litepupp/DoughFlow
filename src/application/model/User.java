@@ -80,6 +80,54 @@ public class User {
 		
 	}
 	
+	public int getNumExpense() {
+		int sum = 0;
+		for (Event i : this.Events) {
+			if (i.getIsExpense() == true) {
+				sum += 1;
+			}
+		}
+		
+		return sum;
+	}
+	
+	public int getNumIncome() {
+		int sum = 0;
+		for (Event i : this.Events) {
+			if (i.getIsExpense() == false) {
+				sum += 1;
+			}
+		}
+		
+		return sum;
+	}
+	
+	public double getTotalIncome() {
+		double sum = 0;
+		for (Event i : this.Events) {
+			if (i.getIsExpense() == false) {
+				sum += i.getAmount();
+			}
+		}
+		
+		return sum;
+	}
+	
+	public double getTotalExpense() {
+		double sum = 0;
+		for (Event i : this.Events) {
+			if (i.getIsExpense() == true) {
+				sum += i.getAmount();
+			}
+		}
+		
+		return sum;
+	}
+	
+	public double getBalance() {
+		return (this.getTotalIncome() - this.getTotalExpense());
+	}
+	
 	public void removeEvent(String name) {
 		for (Iterator<Event> it = this.Events.iterator(); it.hasNext();) {
 			Event currentEvent = it.next();

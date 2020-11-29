@@ -46,7 +46,11 @@
             </Accordion>
             <PieChart fx:id="PieChart" layoutX="204.0" layoutY="125.0" prefHeight="306.0" prefWidth="379.0" title="Expenses" />
             <Button fx:id="ViewCalendarButton" layoutX="20.0" layoutY="169.0" mnemonicParsing="false" onAction="#Calendar" prefHeight="44.0" prefWidth="96.0" text="View Calendar" textAlignment="CENTER" wrapText="true" />
-            <TextArea editable="false" layoutX="225.0" layoutY="437.0" prefHeight="141.0" prefWidth="351.0" promptText="temp" />
+            <TextArea fx:id="StatsTextArea" editable="false" layoutX="160.0" layoutY="437.0" prefHeight="141.0" prefWidth="481.0" promptText="temp">
+               <font>
+                  <Font name="SF Mono Regular" size="13.0" />
+               </font>
+            </TextArea>
          </children>
       </AnchorPane>
    </center>

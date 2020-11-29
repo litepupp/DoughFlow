@@ -10,10 +10,10 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ChoiceBox fx:id="EventChoiceBox" layoutX="45.0" layoutY="73.0" prefHeight="27.0" prefWidth="305.0"  onAction="#selectedChoice" />
+            <ChoiceBox fx:id="EventChoiceBox" layoutX="45.0" layoutY="73.0" onAction="#selectedChoice" prefHeight="27.0" prefWidth="305.0" />
             <TextArea fx:id="EventTextArea" editable="false" layoutX="50.0" layoutY="114.0" prefHeight="137.0" prefWidth="290.0" promptText="Information for Event selected" wrapText="true">
                <font>
-                  <Font name="Courier" size="13.0" />
+                  <Font name="SF Mono Regular" size="13.0" />
                </font></TextArea>
             <Button fx:id="DeleteButton" layoutX="164.0" layoutY="261.0" mnemonicParsing="false" onAction="#deleteEventPress" text="DELETE" />
             <Label fx:id="StatusLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="299.0" prefHeight="57.0" prefWidth="300.0" text="Status: Waiting" textAlignment="CENTER" wrapText="true" />
