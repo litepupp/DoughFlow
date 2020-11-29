@@ -6,11 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
 
@@ -28,15 +28,15 @@ public class LoginController {
 	@FXML
 	private Label ErrorLabel;
 	@FXML
-	public TextField NameField;
+	public JFXTextField NameField;
 	@FXML
-	public TextField UsernameField;
+	public JFXTextField UsernameField;
 	@FXML
-	public PasswordField PasswordField;
+	public JFXPasswordField PasswordField;
 	@FXML
-	public Button LoginButton;
+	public JFXButton LoginButton;
 	@FXML
-	public Button RegisterButton;
+	public JFXButton RegisterButton;
 	
 	public void initializeLogins() {
 		currentLogin = new Login();
