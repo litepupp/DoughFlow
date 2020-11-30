@@ -70,7 +70,7 @@
                 </TitledPane>
               </panes>
             </Accordion>
-            <JFXTextArea fx:id="StatsTextArea" layoutX="255.0" layoutY="434.0" maxWidth="456.0" minWidth="330.0" prefHeight="142.0" prefWidth="330.0" />
+            <JFXTextArea fx:id="StatsTextArea" editable="false" layoutX="255.0" layoutY="434.0" maxWidth="456.0" minWidth="330.0" prefHeight="142.0" prefWidth="330.0" />
             <Label layoutX="255.0" layoutY="122.0" text="Expense Breakdown">
                <font>
                   <Font name="Arial Black" size="18.0" />

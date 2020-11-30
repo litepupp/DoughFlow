@@ -10,13 +10,11 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-<<<<<<< HEAD
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
-=======
 //import javafx.scene.control.Button;
->>>>>>> 531fed076d73d20aed52359ad16672edd109e5da
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 //import javafx.scene.control.TextArea;
 import javafx.scene.chart.PieChart;
 import com.jfoenix.controls.JFXButton;
@@ -55,15 +53,11 @@ public class MainController {
 	private JFXButton ViewCalendarButton;
 	@FXML
 	private PieChart PieChart;
-	@FXML
-<<<<<<< HEAD
-	private TextArea StatsTextArea;
+//	private TextArea StatsTextArea;
 	@FXML
 	private Accordion EventAccordion;
-=======
 //	private TextArea StatsTextArea;
 	private JFXTextArea StatsTextArea;
->>>>>>> 531fed076d73d20aed52359ad16672edd109e5da
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
