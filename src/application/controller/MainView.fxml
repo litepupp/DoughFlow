@@ -1,35 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.chart.*?>
-<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <top>
+      <AnchorPane prefHeight="600.0" prefWidth="190.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="WelcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="164.0" layoutY="14.0" prefHeight="58.0" prefWidth="473.0" text="temp" textAlignment="CENTER" wrapText="true">
+            <AnchorPane layoutX="-5.0" layoutY="-2.0" prefHeight="611.0" prefWidth="225.0" style="-fx-background-color: #77a6f7;">
+               <children>
+                  <JFXButton fx:id="ViewCalendarButton" layoutX="38.0" layoutY="275.0" onAction="#Calendar" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #ffccbc;" text="View Calendar">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="AddEventButton" layoutX="38.0" layoutY="344.0" onAction="#AddNewEvent" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #d3e3fc;" text="Add Event">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="DeleteEventButton" layoutX="38.0" layoutY="415.0" onAction="#DeleteEvent" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #d3e3fc;" text="Delete Event">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="logoutButton" buttonType="RAISED" layoutX="38.0" layoutY="505.0" onAction="#logout" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #00887a;" text="Logout" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font></JFXButton>
+                  <Label fx:id="WelcomeLabel" contentDisplay="CENTER" layoutX="51.0" layoutY="190.0" text="name" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="43.0" layoutY="161.0" text="Welcome back," textFill="WHITE">
                <font>
-                  <Font size="31.0" />
-               </font></Label>
-            <Button fx:id="logoutButton" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" text="LOGOUT" />
-            <Label fx:id="currentCycle" alignment="CENTER" contentDisplay="CENTER" layoutX="267.0" layoutY="75.0" prefHeight="36.0" prefWidth="267.0" text="Current Cycle: test test test test test" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font size="12.0" />
-               </font></Label>
-            <Button fx:id="refreshButton" layoutX="201.0" layoutY="80.0" mnemonicParsing="false" onAction="#refreshPage" text="Refresh" />
-            <Button fx:id="AddEventButton" layoutX="20.0" layoutY="80.0" mnemonicParsing="false" onAction="#AddNewEvent" text="Add Event" />
-            <Button fx:id="DeleteEventButton" layoutX="20.0" layoutY="125.0" mnemonicParsing="false" onAction="#DeleteEvent" text="Delete Event" />
-            <Accordion layoutX="589.0" layoutY="14.0" prefHeight="564.0" prefWidth="203.0">
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="125.0" fitWidth="124.0" layoutX="46.0" layoutY="36.0">
+               <image>
+                  <Image url="@../../../../../../OneDrive/Desktop/usericon.png" />
+               </image>
+            </ImageView>
+            <Accordion layoutX="585.0" layoutY="232.0" style="-fx-background-color: #d3e3fc;">
               <panes>
-                <TitledPane animated="false" text="This Week">
+                <TitledPane style="-fx-background-color: #d3e3fc;" text="Next Month">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" prefHeight="266.0" prefWidth="202.0" text="This Week">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="200.0" />
                   </content>
                 </TitledPane>
                 <TitledPane animated="false" text="Next Week">
@@ -37,21 +68,36 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Next Month">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </TitledPane>
               </panes>
             </Accordion>
-            <PieChart fx:id="PieChart" layoutX="204.0" layoutY="125.0" prefHeight="306.0" prefWidth="379.0" title="Expenses" />
-            <Button fx:id="ViewCalendarButton" layoutX="20.0" layoutY="169.0" mnemonicParsing="false" onAction="#Calendar" prefHeight="44.0" prefWidth="96.0" text="View Calendar" textAlignment="CENTER" wrapText="true" />
-            <TextArea fx:id="StatsTextArea" editable="false" layoutX="160.0" layoutY="437.0" prefHeight="141.0" prefWidth="481.0" promptText="temp">
+            <JFXTextArea fx:id="StatsTextArea" layoutX="255.0" layoutY="434.0" maxWidth="456.0" minWidth="330.0" prefHeight="142.0" prefWidth="330.0" />
+            <Label layoutX="255.0" layoutY="122.0" text="Expense Breakdown">
                <font>
-                  <Font name="SF Mono Regular" size="13.0" />
+                  <Font name="Arial Black" size="18.0" />
                </font>
-            </TextArea>
+            </Label>
+            <Label layoutX="254.0" layoutY="13.0" text="DASHBOARD" textFill="#00887a">
+               <font>
+                  <Font name="Arial Black" size="31.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentCycle" layoutX="256.0" layoutY="60.0" text="Current Cycle:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <PieChart fx:id="PieChart" layoutX="259.0" layoutY="171.0" prefHeight="243.0" prefWidth="294.0" />
+            <Label layoutX="585.0" layoutY="174.0" text="Upcoming Payments">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="refreshButton" buttonType="RAISED" layoutX="697.0" layoutY="28.0" style="-fx-background-color: #d3e3fc;" text="Refresh">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
-   </center>
+   </top>
 </BorderPane>
