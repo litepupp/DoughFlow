@@ -10,12 +10,11 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-//import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-//import javafx.scene.control.TextArea;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.TextArea;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextArea;
+//import com.jfoenix.controls.JFXTextArea;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -51,8 +50,8 @@ public class MainController {
 	@FXML
 	private PieChart PieChart;
 	@FXML
-//	private TextArea StatsTextArea;
-	private JFXTextArea StatsTextArea;
+	private TextArea StatsTextArea;
+//	private JFXTextArea StatsTextArea;
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
