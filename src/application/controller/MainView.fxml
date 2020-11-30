@@ -15,9 +15,9 @@
          <children>
             <AnchorPane layoutX="-5.0" layoutY="-2.0" prefHeight="611.0" prefWidth="225.0" style="-fx-background-color: #77a6f7;">
                <children>
-                  <JFXButton fx:id="ViewCalendarButton" layoutX="38.0" layoutY="275.0" mouseTransparent="true" onAction="#Calendar" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #ffccbc;" text="View Calendar">
+                  <JFXButton fx:id="ViewCalendarButton" layoutX="38.0" layoutY="275.0" onAction="#CalendarPress" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #ffccbc;" text="View Calendar">
                      <font>
-                        <Font size="19.0" />
+                        <Font size="18.0" />
                      </font>
                   </JFXButton>
                   <JFXButton fx:id="AddEventButton" layoutX="38.0" layoutY="344.0" onAction="#AddNewEvent" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #d3e3fc;" text="Add Event">
@@ -48,7 +48,7 @@
             </Label>
             <ImageView fitHeight="125.0" fitWidth="124.0" layoutX="46.0" layoutY="36.0">
                <image>
-                  <Image url="@../../../../../../OneDrive/Desktop/usericon.png" />
+                  <Image url="@../../../images/usericon.png" />
                </image>
             </ImageView>
             <Accordion layoutX="585.0" layoutY="232.0" style="-fx-background-color: #d3e3fc;">
@@ -91,7 +91,7 @@
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <JFXButton fx:id="refreshButton" buttonType="RAISED" layoutX="697.0" layoutY="28.0" style="-fx-background-color: #d3e3fc;" text="Refresh">
+            <JFXButton fx:id="refreshButton" buttonType="RAISED" layoutX="697.0" layoutY="28.0" onAction="#refreshPage" style="-fx-background-color: #d3e3fc;" text="Refresh">
                <font>
                   <Font size="15.0" />
                </font>

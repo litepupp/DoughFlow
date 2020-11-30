@@ -12,13 +12,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import javafx.scene.control.Accordion;
-//import javafx.scene.control.Button;
 
 import javafx.scene.control.Label;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.TextArea;
 import com.jfoenix.controls.JFXButton;
-//import com.jfoenix.controls.JFXTextArea;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -37,31 +35,21 @@ public class MainController {
 	@FXML
 	private Label currentCycle;
 	@FXML
-	//private Button refreshButton;
 	private JFXButton refreshButton;
 	@FXML
 	private JFXButton logoutButton;
-	//private Button logoutButton;
 	@FXML
 	private JFXButton AddEventButton;
-	//private Button AddEventButton;
 	@FXML
 	private JFXButton DeleteEventButton;
-	//private Button DeleteEventButton;
 	@FXML
-//	private Button ViewCalendarButton;
 	private JFXButton ViewCalendarButton;
 	@FXML
 	private PieChart PieChart;
-//	private TextArea StatsTextArea;
 	@FXML
-
 	private TextArea StatsTextArea;
-//	private JFXTextArea StatsTextArea;
-
-//	private Accordion EventAccordion;
-//	private TextArea StatsTextArea;
-//	private JFXTextArea StatsTextArea;
+	@FXML
+	private Accordion EventAccordion;
 
 	
 	public void initializeAll(Login login, User user) throws IOException {
@@ -138,7 +126,7 @@ public class MainController {
 		      stats += "Total Expenses: " + currentUser.getTotalExpense() + "\n";
 		      stats += "Total BALANCE:  " + currentUser.getBalance() + "\n";
 		
-		//StatsTextArea.setText(stats);
+		StatsTextArea.setText(stats);
 	}
 	
 	public void AddNewEvent(ActionEvent actionEvent) throws IOException {
@@ -192,7 +180,7 @@ public class MainController {
 		deleteEventStage.show();
 	}
 	
-	public void Calendar(ActionEvent event) throws IOException {
+	public void CalendarPress(ActionEvent event) throws IOException {
 		System.out.println("View Calendar Pressed");
 		
 		FXMLLoader calendarLoader = new FXMLLoader();

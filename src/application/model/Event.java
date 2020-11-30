@@ -35,6 +35,10 @@ public class Event {
 		return textAreaInfo;
 	}
 	
+	/*Takes in calendar date pressed
+	 * checks using DateStart and interval/type mean
+	 * that event exists on onDate
+	*/
 	public boolean isOnDate(LocalDate onDate) {
 		return false;
 	}

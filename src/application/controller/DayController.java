@@ -1,8 +1,5 @@
 package application.controller;
 
-
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -28,57 +25,35 @@ public class DayController {
 	private Label dateLabel;
 	
 	
-	public void initializeUser(User user) {
+	public void initializeAll(User user, LocalDate datePressed) {
 		currentUser = user;
-		initializeAll(currentUser);
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String formattedString = datePressed.format(formatter);
+		
+		dateLabel.setText(formattedString);
+		setEventsOnDate(datePressed);
 	}
 	
-	public void initializeAll(User user) {
-		try {
-			ObservableList<String> listViewData = FXCollections.observableArrayList();
-			String row, date, eventFormat;
-			date = dateSet();
-			BufferedReader br = new BufferedReader(new FileReader("data/events.csv"));
-			while((row = br.readLine()) != null) {
-				String[] data = row.split(",");
-				if(data[7].equals(currentUser.getUsername()) && data[4].equals(date)){
-					if(data[1].equals("FALSE")) {
-						eventFormat = "" + data[0] + " - $" + data[3] + " - Income";
-					} else{
-						eventFormat = "" + data[0] + " - $" + data[3] + " - Expense";
-					}
-					listViewData.add(eventFormat);
-				}
-			}
-			EventListView.setItems(listViewData);
-			br.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-<<<<<<< HEAD
-		*/
-		
-		dateSet(eventDate);
+	public void setEventsOnDate(LocalDate datePressed) {
+
 		ObservableList<String> listViewData = FXCollections.observableArrayList();
-=======
->>>>>>> fa9367eaef95f943f2a0ad78f9e27a4b1fca7a04
-		
+		String eventInfo;
 		for (Event i : currentUser.getEvents()) {
-			if (true) {
-				
+			if (i.isOnDate(datePressed)) {
+				if (i.getIsExpense()) {
+					eventInfo = i.getEventName() + " - " + i.getCategory() + " - $" + i.getAmount() + " - Expense";
+				}
+				else {
+					eventInfo = i.getEventName() + " - " + i.getCategory() + " - $" + i.getAmount() + " - Income";
+				}
+				listViewData.add(eventInfo);
 			}
 		}
 		
 		EventListView.setItems(listViewData);
 	}
 	
-	public String dateSet() {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-		LocalDate date = LocalDate.now();
-		String strDate = dtf.format(date);
-		dateLabel.setText(strDate);
-		return strDate;
-	}
 	
 	public void returnToCalendar() {
 		Stage deleteDayStage = (Stage)ReturnButton.getScene().getWindow();
