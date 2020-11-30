@@ -40,7 +40,10 @@ public class Main extends Application {
 			);
 		
 		primaryStage.setScene(scene);
+//		scene.getStylesheets().add("Style.css");
 		primaryStage.show();
+		
+
 		
 	}
 
