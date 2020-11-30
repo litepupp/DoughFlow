@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -45,6 +46,8 @@ public class MainController {
 	private PieChart PieChart;
 	@FXML
 	private TextArea StatsTextArea;
+	@FXML
+	private Accordion EventAccordion;
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
