@@ -27,21 +27,21 @@ public class DayController {
 	private Label dateLabel;
 	
 	
-	public void initializeUser(User user) {
+	public void initializeUser(User user, String eventDate) {
 		currentUser = user;
-		initializeAll(currentUser);
+		initializeAll(currentUser, eventDate);
 	}
 	
-	public void initializeAll(User user) {
+	public void initializeAll(User user, String eventDate) {
 		try {
 			ObservableList<String> listViewData = FXCollections.observableArrayList();
-			String row, date, eventFormat;
-			date = dateSet();
+			String row, eventFormat;
+			dateSet(eventDate);
 			BufferedReader br = new BufferedReader(new FileReader("data/events.csv"));
 			while((row = br.readLine()) != null) {
 				String[] data = row.split(",");
-				if(data[7].equals(currentUser.getUsername()) && data[4].equals(date)){
-					if(data[1].equals("FALSE")) {
+				if(data[7].equals(currentUser.getUsername()) && data[4].equals(eventDate)){
+					if(data[1].equals("false")) {
 						eventFormat = "" + data[0] + " - $" + data[3] + " - Income";
 					} else{
 						eventFormat = "" + data[0] + " - $" + data[3] + " - Expense";
@@ -54,12 +54,11 @@ public class DayController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
-	public String dateSet() {
+	public String dateSet(String eventDate) {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-		LocalDate date = LocalDate.now();
+		LocalDate date = LocalDate.parse(eventDate);
 		String strDate = dtf.format(date);
 		dateLabel.setText(strDate);
 		return strDate;
