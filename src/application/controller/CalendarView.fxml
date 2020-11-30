@@ -182,22 +182,22 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="DayButton32" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="2" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button fx:id="DayButton32" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="1" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="DayButton33" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="3" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <Button fx:id="DayButton33" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="1" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="DayButton34" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="4" textAlignment="RIGHT" GridPane.columnIndex="5" GridPane.rowIndex="4">
+            <Button fx:id="DayButton34" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="1" textAlignment="RIGHT" GridPane.columnIndex="5" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="DayButton35" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="5" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="4">
+            <Button fx:id="DayButton35" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="696.0" layoutY="334.0" mnemonicParsing="false" onAction="#viewDay" prefHeight="108.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" text="1" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font>
@@ -208,7 +208,7 @@
    <top>
       <AnchorPane prefHeight="60.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="304.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="November 2020" textAlignment="CENTER" wrappingWidth="194.78909301757812">
+            <Text layoutX="304.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Calendar" textAlignment="CENTER" wrappingWidth="194.78909301757812">
                <font>
                   <Font size="23.0" />
                </font>

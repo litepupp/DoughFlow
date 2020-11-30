@@ -28,25 +28,21 @@ public class DayController {
 	private Label dateLabel;
 	
 	
-	public void initializeUser(User user, String eventDate) {
+	public void initializeUser(User user) {
 		currentUser = user;
-		initializeAll(currentUser, eventDate);
+		initializeAll(currentUser);
 	}
 	
-	public void initializeAll(User user, String eventDate) {
-		
-		/*Every time a user creates/deletes an Event, methods (writeNewEventFile, deleteEventInFile)
-		 * will handle updating events.csv, we only need to look at data in currentUser
+	public void initializeAll(User user) {
 		try {
 			ObservableList<String> listViewData = FXCollections.observableArrayList();
-			String row, eventFormat;
-			dateSet(eventDate);
-			
+			String row, date, eventFormat;
+			date = dateSet();
 			BufferedReader br = new BufferedReader(new FileReader("data/events.csv"));
 			while((row = br.readLine()) != null) {
 				String[] data = row.split(",");
-				if(data[7].equals(currentUser.getUsername()) && data[4].equals(eventDate)){
-					if(data[1].equals("false")) {
+				if(data[7].equals(currentUser.getUsername()) && data[4].equals(date)){
+					if(data[1].equals("FALSE")) {
 						eventFormat = "" + data[0] + " - $" + data[3] + " - Income";
 					} else{
 						eventFormat = "" + data[0] + " - $" + data[3] + " - Expense";
@@ -59,10 +55,13 @@ public class DayController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		*/
 		
 		dateSet(eventDate);
 		ObservableList<String> listViewData = FXCollections.observableArrayList();
+=======
+>>>>>>> fa9367eaef95f943f2a0ad78f9e27a4b1fca7a04
 		
 		for (Event i : currentUser.getEvents()) {
 			if (true) {
@@ -73,9 +72,9 @@ public class DayController {
 		EventListView.setItems(listViewData);
 	}
 	
-	public String dateSet(String eventDate) {
+	public String dateSet() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-		LocalDate date = LocalDate.parse(eventDate);
+		LocalDate date = LocalDate.now();
 		String strDate = dtf.format(date);
 		dateLabel.setText(strDate);
 		return strDate;
