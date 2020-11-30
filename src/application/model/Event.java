@@ -35,6 +35,10 @@ public class Event {
 		return textAreaInfo;
 	}
 	
+	public boolean isOnDate(LocalDate onDate) {
+		return false;
+	}
+	
 	public String getEventName() {
 		return this.EventName;
 	}

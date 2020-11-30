@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import application.model.Event;
 import application.model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -60,8 +61,16 @@ public class DayController {
 		}
 		*/
 		
+		dateSet(eventDate);
 		ObservableList<String> listViewData = FXCollections.observableArrayList();
 		
+		for (Event i : currentUser.getEvents()) {
+			if (true) {
+				
+			}
+		}
+		
+		EventListView.setItems(listViewData);
 	}
 	
 	public String dateSet(String eventDate) {
