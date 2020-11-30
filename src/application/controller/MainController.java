@@ -10,10 +10,12 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+//import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+//import javafx.scene.control.TextArea;
 import javafx.scene.chart.PieChart;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextArea;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -32,26 +34,32 @@ public class MainController {
 	@FXML
 	private Label currentCycle;
 	@FXML
-	private Button refreshButton;
+	//private Button refreshButton;
+	private JFXButton refreshButton;
 	@FXML
-	private Button logoutButton;
+	private JFXButton logoutButton;
+	//private Button logoutButton;
 	@FXML
-	private Button AddEventButton;
+	private JFXButton AddEventButton;
+	//private Button AddEventButton;
 	@FXML
-	private Button DeleteEventButton;
+	private JFXButton DeleteEventButton;
+	//private Button DeleteEventButton;
 	@FXML
-	private Button ViewCalendarButton;
+//	private Button ViewCalendarButton;
+	private JFXButton ViewCalendarButton;
 	@FXML
 	private PieChart PieChart;
 	@FXML
-	private TextArea StatsTextArea;
+//	private TextArea StatsTextArea;
+	private JFXTextArea StatsTextArea;
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
 		currentUser = user;
 		currentUser.updateEventCategories();
 		
-		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
+		WelcomeLabel.setText(currentUser.getName());
 		dateSet();
 		setPie();
 		setAccordion();
@@ -62,7 +70,7 @@ public class MainController {
 		currentUser = user;
 		currentUser.updateEventCategories();
 		
-		WelcomeLabel.setText("Welcome: " + currentUser.getName() + "/" + currentUser.getUsername());
+		WelcomeLabel.setText(currentUser.getName());
 		dateSet();
 		setPie();
 		setAccordion();
