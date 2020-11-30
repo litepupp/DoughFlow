@@ -11,10 +11,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
 //import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 //import javafx.scene.control.TextArea;
 import javafx.scene.chart.PieChart;
 import com.jfoenix.controls.JFXButton;
@@ -133,7 +131,7 @@ public class MainController {
 		      stats += "Total Expenses: " + currentUser.getTotalExpense() + "\n";
 		      stats += "Total BALANCE:  " + currentUser.getBalance() + "\n";
 		
-		StatsTextArea.setText(stats);
+		//StatsTextArea.setText(stats);
 	}
 	
 	public void AddNewEvent(ActionEvent actionEvent) throws IOException {

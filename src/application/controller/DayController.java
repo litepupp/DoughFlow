@@ -33,10 +33,14 @@ public class DayController {
 	}
 	
 	public void initializeAll(User user, String eventDate) {
+		
+		/*Every time a user creates/deletes an Event, methods (writeNewEventFile, deleteEventInFile)
+		 * will handle updating events.csv, we only need to look at data in currentUser
 		try {
 			ObservableList<String> listViewData = FXCollections.observableArrayList();
 			String row, eventFormat;
 			dateSet(eventDate);
+			
 			BufferedReader br = new BufferedReader(new FileReader("data/events.csv"));
 			while((row = br.readLine()) != null) {
 				String[] data = row.split(",");
@@ -54,6 +58,10 @@ public class DayController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		*/
+		
+		ObservableList<String> listViewData = FXCollections.observableArrayList();
+		
 	}
 	
 	public String dateSet(String eventDate) {
