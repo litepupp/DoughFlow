@@ -10,6 +10,10 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
+import javafx.scene.control.Accordion;
+//import javafx.scene.control.Button;
+
 import javafx.scene.control.Label;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.TextArea;
@@ -49,9 +53,16 @@ public class MainController {
 	private JFXButton ViewCalendarButton;
 	@FXML
 	private PieChart PieChart;
+//	private TextArea StatsTextArea;
 	@FXML
+
 	private TextArea StatsTextArea;
 //	private JFXTextArea StatsTextArea;
+
+//	private Accordion EventAccordion;
+//	private TextArea StatsTextArea;
+//	private JFXTextArea StatsTextArea;
+
 	
 	public void initializeAll(Login login, User user) throws IOException {
 		currentLogin = login;
@@ -127,7 +138,7 @@ public class MainController {
 		      stats += "Total Expenses: " + currentUser.getTotalExpense() + "\n";
 		      stats += "Total BALANCE:  " + currentUser.getBalance() + "\n";
 		
-		StatsTextArea.setText(stats);
+		//StatsTextArea.setText(stats);
 	}
 	
 	public void AddNewEvent(ActionEvent actionEvent) throws IOException {
