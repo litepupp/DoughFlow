@@ -13,12 +13,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CalendarController {
 	
 	public static User currentUser;
+	public static LocalDate currentDate;
 	
+	@FXML
+	private Text monthLabel;
 	@FXML
 	private Button NextMonthButton;
 	@FXML
@@ -41,8 +45,9 @@ public class CalendarController {
 	
 	public void initializeUser(User user) {
 		currentUser = user;
+		currentDate = LocalDate.now();
 		initializeButtonArray();
-		initializeAll(currentUser);
+		initializeAll(currentUser, currentDate);
 	}
 	
 	public void initializeButtonArray() {
@@ -84,12 +89,15 @@ public class CalendarController {
  		ButtonList[34] = DayButton35;
  	}
 	
-	public void initializeAll(User user) {
-		LocalDate date = LocalDate.now();
+	public void initializeAll(User user, LocalDate date) {
+		//LocalDate date = LocalDate.now();
 		int currentDay = date.getDayOfMonth();
 		
 		int monthCount = date.getMonthValue();
 		int count = 0;
+		
+		setMonth(monthCount);
+		
 		for(int i = 0; i < 35; i++) {
 			ButtonList[currentDay - 1 + count].setText("" + (currentDay + count));
 			count++;
@@ -103,18 +111,21 @@ public class CalendarController {
 					count = count - 30;
 				}
 			}
-			if(monthCount==2)
+			if(monthCount==2) {
+				if((currentDay + count) > 28) {
 				count = count - 28;
+				}
+			}
 		}
 	}
 	
 	public void viewDay(ActionEvent event) throws IOException{
 		
 		String day = ((Button)event.getSource()).getText();
- 		String month = Integer.toString(LocalDate.now().getMonthValue());
+ 		String month = Integer.toString(currentDate.getMonthValue());
  		int dayNum = Integer.parseInt(day);
- 		int dayMonth = LocalDate.now().getMonthValue();
- 		int dayYear = LocalDate.now().getYear();
+ 		int dayMonth = currentDate.getMonthValue();
+ 		int dayYear = currentDate.getYear();
  		if (dayNum < 10)
  			day = "0" + dayNum;
  		if(dayMonth < 10)
@@ -137,6 +148,60 @@ public class CalendarController {
 		Stage dayStage = new Stage();
 		dayStage.setScene(dayScene);
 		dayStage.show();
+	}
+	
+	public void setMonth(int month) {
+		switch(month){
+			case 1:
+				monthLabel.setText("January " + currentDate.getYear());
+				break;
+			case 2:
+				monthLabel.setText("February " + currentDate.getYear());
+				break;
+			case 3:
+				monthLabel.setText("March " + currentDate.getYear());
+				break;
+			case 4:
+				monthLabel.setText("April " + currentDate.getYear());
+				break;
+			case 5:
+				monthLabel.setText("May " + currentDate.getYear());
+				break;
+			case 6:
+				monthLabel.setText("June " + currentDate.getYear());
+				break;
+			case 7:
+				monthLabel.setText("July " + currentDate.getYear());
+				break;
+			case 8:
+				monthLabel.setText("August " + currentDate.getYear());
+				break;
+			case 9:
+				monthLabel.setText("September " + currentDate.getYear());
+				break;
+			case 10:
+				monthLabel.setText("October " + currentDate.getYear());
+				break;
+			case 11:
+				monthLabel.setText("November " + currentDate.getYear());
+				break;
+			case 12:
+				monthLabel.setText("December " + currentDate.getYear());
+				break;
+			default:
+				monthLabel.setText("N/A");
+				break;
+		}
+	}
+	
+	public void prevMonth() {
+		currentDate = currentDate.minusMonths(1);
+		initializeAll(currentUser, currentDate);
+	}
+	
+	public void nextMonth() {
+		currentDate = currentDate.plusMonths(1);
+		initializeAll(currentUser, currentDate);
 	}
 	
 	public void returnHome(ActionEvent event) throws IOException {

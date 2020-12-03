@@ -208,7 +208,7 @@
    <top>
       <AnchorPane prefHeight="60.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="304.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Calendar" textAlignment="CENTER" wrappingWidth="194.78909301757812">
+            <Text fx:id="monthLabel" layoutX="304.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Calendar" textAlignment="CENTER" wrappingWidth="194.78909301757812">
                <font>
                   <Font size="23.0" />
                </font>
@@ -218,8 +218,8 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="495.0" layoutY="18.0" mnemonicParsing="false" text="Next Month" />
-            <Button layoutX="218.0" layoutY="18.0" mnemonicParsing="false" text="Prev Month" />
+            <Button fx:id="NextMonthButton" layoutX="495.0" layoutY="18.0" mnemonicParsing="false" onAction="#nextMonth" text="Next Month" />
+            <Button fx:id="PrevMonthButton" layoutX="218.0" layoutY="18.0" mnemonicParsing="false" onAction="#prevMonth" text="Prev Month" />
          </children>
       </AnchorPane>
    </top>

@@ -28,7 +28,7 @@ public class DayController {
 	public void initializeAll(User user, LocalDate datePressed) {
 		currentUser = user;
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 		String formattedString = datePressed.format(formatter);
 		
 		dateLabel.setText(formattedString);
