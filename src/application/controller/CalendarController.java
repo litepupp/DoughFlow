@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.io.IOException;
+import java.time.DateTimeException;
 //import java.time.DayOfWeek;
 import java.time.LocalDate;
 
@@ -119,7 +120,7 @@ public class CalendarController {
 		}
 	}
 	
-	public void viewDay(ActionEvent event) throws IOException{
+	public void viewDay(ActionEvent event) throws IOException {
 		
 		String day = ((Button)event.getSource()).getText();
  		String month = Integer.toString(currentDate.getMonthValue());
@@ -132,8 +133,17 @@ public class CalendarController {
  			month = "0" + dayMonth;
 
  		String date = dayYear + "-" + month + "-" + day;
- 		LocalDate dateSelected = LocalDate.parse(date);
-		
+ 		
+ 		LocalDate dateSelected = null;
+ 		try {
+ 			dateSelected = LocalDate.parse(date);
+ 		}
+ 		catch (DateTimeException e) {
+ 			System.out.println("Invalid Date Pressed");
+ 			date = dayYear + "-" + month + "-" + "01";
+ 			dateSelected = LocalDate.parse(date);
+ 		}
+ 		
  		System.out.println("Date Pressed: " + dateSelected);
  		
 		FXMLLoader dayLoader = new FXMLLoader();

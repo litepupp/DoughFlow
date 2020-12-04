@@ -41,12 +41,7 @@ public class DayController {
 		String eventInfo;
 		for (Event i : currentUser.getEvents()) {
 			if (i.isOnDate(datePressed)) {
-				if (i.getIsExpense()) {
-					eventInfo = i.getEventName() + " - " + i.getCategory() + " - $" + i.getAmount() + " - Expense";
-				}
-				else {
-					eventInfo = i.getEventName() + " - " + i.getCategory() + " - $" + i.getAmount() + " - Income";
-				}
+				eventInfo = i.getFullInfo();
 				listViewData.add(eventInfo);
 			}
 		}

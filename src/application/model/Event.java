@@ -40,7 +40,51 @@ public class Event {
 	 * that event exists on onDate
 	*/
 	public boolean isOnDate(LocalDate onDate) {
-		return false;
+		LocalDate temp = this.DateStart;
+		if (onDate.isBefore(this.DateStart)) {
+			return false;
+		}
+		else if (onDate.isEqual(this.DateStart)) {
+			return true;
+		}
+		else {
+			if (this.IntervalType.equals("Month")) {
+				while(!(temp.isEqual(onDate))) {
+					if (temp.isAfter(onDate)) {
+						return false;
+					}
+					else {
+						temp = temp.plusMonths(this.Interval);
+					}
+				}
+				
+				return true;
+			}
+			else if (this.IntervalType.equals("Week")) {
+				while(!(temp.isEqual(onDate))) {
+					if (temp.isAfter(onDate)) {
+						return false;
+					}
+					else {
+						temp = temp.plusWeeks(this.Interval);
+					}
+				}
+				
+				return true;
+			}
+			else {
+				while(!(temp.isEqual(onDate))) {
+					if (temp.isAfter(onDate)) {
+						return false;
+					}
+					else {
+						temp = temp.plusDays(this.Interval);
+					}
+				}
+				
+				return true;
+			}
+		}
 	}
 	
 	public String getEventName() {

@@ -37,7 +37,7 @@
       <Label fx:id="ErrorLabel" layoutX="536.0" layoutY="545.0" />
       <ImageView fitHeight="202.0" fitWidth="294.0" layoutX="42.0" layoutY="327.0">
          <image>
-            <Image url="@../../../../../../OneDrive/Desktop/loginimage4.png" />
+            <Image url="@../../../images/loginimage4.png" />
          </image>
       </ImageView>
    </children>
