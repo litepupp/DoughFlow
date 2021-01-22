@@ -1,8 +1,8 @@
 # DoughFlow
 Java Application that Tracks Expenses
 
-Java SE 1.8
-JavaFX Version 8.0.261
+Java SE 1.8<br />
+JavaFX Version 8.0.261<br />
 
 This app was created by: Michael Maldonado, Jackson Steagall, Xiao Han
 
